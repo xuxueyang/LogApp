@@ -203,7 +203,7 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         miOpen.addActionListener( new ActionListener(){
             public void actionPerformed(ActionEvent e) {
 
-                FileDialog d=new FileDialog(mainFrame , "open file" , FileDialog.LOAD );//打开文件对话框
+                final FileDialog d=new FileDialog(mainFrame , "open file" , FileDialog.LOAD );//打开文件对话框
 
                 d.addWindowListener( new WindowAdapter(){ //关闭文件对话框窗口
                     public void windowClosing(WindowEvent ee){
@@ -247,12 +247,12 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
 
                 if( fileName.equals("") ){ //如果文件没有被保存过,即文件名为空
 
-                    FileDialog d=new FileDialog(mainFrame , "save file" , FileDialog.SAVE );//保存文件对话框
+                    final FileDialog d=new FileDialog(mainFrame , "save file" , FileDialog.SAVE );//保存文件对话框
 
                     d.addWindowListener( new WindowAdapter(){ //关闭文件对话框窗口
                         public void windowClosing(WindowEvent ee){
 //                            System.exit(0);
-                            d.dispose();
+                                d.dispose();
                         }
                     });
                     d.setVisible(true);

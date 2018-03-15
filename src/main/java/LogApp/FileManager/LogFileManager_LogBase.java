@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class LogFileManager_LogBase implements LogFileManagerInterface{
     //    private LogDay logDay;
-    private Map<String,LogBase> dataMap = new HashMap<>();
+    private Map<String,LogBase> dataMap = new HashMap<String, LogBase>();
     //目前先直接就写存储LogEach，之后要记录的是LogYear,或者因为每次操作的是eachPanel，阔以在初始化时
     //将year下属的list =》 dataMap
 

@@ -49,7 +49,7 @@ public class LogGenerator {
     }
 
     public static Color[] getColorsPanelByStringList(LogStatic.mark_star[] strs){
-        ArrayList<Color> jPanelArrayList  = new ArrayList<>();
+        ArrayList<Color> jPanelArrayList  = new ArrayList<Color>();
         for(LogStatic.mark_star str:strs){
             Color color = getColorByString(str.name());
 //            JPanel jPanel = new JPanel();

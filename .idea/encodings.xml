@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/src/LogApp/Controller/LogCtrInterface.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/LogFactory.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/LogLogic.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/LogStart.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/LogStatic.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/Model/LogBase.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/Model/LogEach.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/Tool/LogEvent.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/View/LogEachPanel.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/View/LogJFrame.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/View/LogOverPanel.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/LogApp/View/LogTextArea.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/example/HideFrame.java" charset="GBK" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Controller/LogCtrInterface.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/LogFactory.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/LogLogic.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/LogStart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/LogStatic.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Model/LogBase.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Model/LogEach.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Tool/LogEvent.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogEachPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogJFrame.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogOverPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogTextArea.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/example/HideFrame.java" charset="GBK" />
   </component>
 </project>

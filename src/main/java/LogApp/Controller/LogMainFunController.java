@@ -15,7 +15,7 @@ public class LogMainFunController implements LogCtrInterface {
     private LogEvent mainFun_showAllNoOver(LogEvent logEvent){
         //TODO 再次点击隐藏面板
         List<LogEach> list = LogFileManager.getLogFileManager().getAllNoOverList();
-        ArrayList<LogEachPanel> logEachPanelList = new ArrayList<>();
+        ArrayList<LogEachPanel> logEachPanelList = new ArrayList<LogEachPanel>();
         for(LogEach logEach:list){
             logEachPanelList.add(LogFactory.createLogEachPanel(logEach));
         }

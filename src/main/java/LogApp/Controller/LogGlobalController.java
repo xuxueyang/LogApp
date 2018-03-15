@@ -55,7 +55,7 @@ public class LogGlobalController implements LogCtrInterface {
         LogJFrame.getLogJFrame().setVisible(true);
         //加载LogEach
         List<String> puuidList =  LogFileLoadAndSave.getLogFileLoadAndSave().loadPUuidByPath(path);
-        List<LogEach> list = new ArrayList<>();
+        List<LogEach> list = new ArrayList<LogEach>();
         for(String puuid:puuidList){
             //这里查询是查询出附属文件下的全部数据，不管后缀，就算想以meta为后缀区分似乎也不可以...也就是对于LogDay的文件需要想办法单独区分。比如，直接将路径存储到LogDay中？
             //坏处就算logDay耦合太高，毕竟现在有文件夹路径的存在已经可以区分，没必要再这样...

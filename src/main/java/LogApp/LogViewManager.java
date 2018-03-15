@@ -11,9 +11,9 @@ import java.util.Map;
  */
 public class LogViewManager {
     //含有的视图——获取parent进行更新应该是更好的。
-    private Map<String,LogEachPanel> viewMap = new HashMap<>();
+    private Map<String,LogEachPanel> viewMap = new HashMap<String, LogEachPanel>();
     //观测监听者
-    private Map<String,JPanel> observers = new HashMap<>();
+    private Map<String,JPanel> observers = new HashMap<String, JPanel>();
     private LogViewManager(){
 
     }

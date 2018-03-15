@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 public class LogFileManager_NoteTreeBase implements LogFileManagerInterface{
-    private Map<String,NoteTreeBase> dataMap = new HashMap<>();
-    @Override
+    private Map<String,NoteTreeBase> dataMap = new HashMap<String, NoteTreeBase>();
+
     public void saveAll() throws IOException {
         for(NoteTreeBase noteTreeBase:dataMap.values()){
             noteTreeBase.save();
@@ -32,7 +32,7 @@ public class LogFileManager_NoteTreeBase implements LogFileManagerInterface{
 
     }
     public List<NoteTreeBase> getAllNoteTree(){
-        List<NoteTreeBase> nodes = new ArrayList<>();
+        List<NoteTreeBase> nodes = new ArrayList<NoteTreeBase>();
         List<String> puuidList = LogFileLoadAndSave.getLogFileLoadAndSave().loadPUuidByPath(LogStatic.REAL_PATH_NOTETREE);
         for(String puuid:puuidList){
             //判断缓存里有没有，没有再从文件里取

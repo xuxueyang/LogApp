@@ -21,8 +21,8 @@ import java.util.HashMap;
  * 最上面是添加的一排按钮（选择跳出创建树的提示输入框），还有一个下拉列表用于选择树（默认为空）
  */
 public class noteTree extends InvokeFun implements TreeSelectionListener {
-    private HashMap<String,NoteTreeBase> map = new HashMap<>();
-    private ArrayList<String> jComboBox_list_UUID = new ArrayList<>();
+    private HashMap<String,NoteTreeBase> map = new HashMap<String, NoteTreeBase>();
+    private ArrayList<String> jComboBox_list_UUID = new ArrayList<String>();
     private String currentTreeUUID = "";
     private JTree jTree = null;
     private JScrollPane jScrollPane = null;

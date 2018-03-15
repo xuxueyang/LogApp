@@ -45,7 +45,7 @@ public class LogFactory_MaxFun {
         LogStatic.FunctionPanel[] values = LogStatic.FunctionPanel.values();
         for(int i=0;i<values.length;i++){
             s.gridy=i;
-            String clickName = values[i].name();
+            final String clickName = values[i].name();
             JButton jButton = new JButton(clickName);
             jButton.addActionListener(new ActionListener() {
                 @Override

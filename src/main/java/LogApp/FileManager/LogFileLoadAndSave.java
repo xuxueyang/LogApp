@@ -86,7 +86,7 @@ public class LogFileLoadAndSave {
      * @return
      */
     public List<String> loadPUuidByPath(String path){
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         File file = new File(path);
         if(file.isDirectory()){
             for(File tmp:file.listFiles()){

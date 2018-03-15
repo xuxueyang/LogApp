@@ -20,7 +20,7 @@ public class NoteTreeBase {
     protected String UUID;
     protected TreeLevel treeLevel;
     protected NoteTreeBase parrent;
-    protected ArrayList<NoteTreeBase> arrayList = new ArrayList<>();
+    protected ArrayList<NoteTreeBase> arrayList = new ArrayList<NoteTreeBase>();
     protected String title="";
     protected String message="";
 

@@ -43,7 +43,7 @@ public class LogTextArea extends JTextArea {
         }
     }
 
-    public LogTextArea(String uuid,String str,boolean isOver){
+    public LogTextArea(final String uuid, String str, boolean isOver){
         super(1,col);
         this.uuid = uuid;
         int max = LogStatic.menuWidth-LogStatic.eachPanelCheckBoxWidth-10-LogStatic.eachPanel_detailButtonWidth-LogStatic.eachPanel_delButtonWidth;

@@ -14,7 +14,7 @@ import java.util.Map;
  * Created by –Ï—©—Ù on 2017/12/5.
  */
 public class LogDay extends LogBase {
-    private Map<String,LogBase> dataMap = new HashMap<>();
+    private Map<String,LogBase> dataMap = new HashMap<String, LogBase>();
     public LogDay(String uuid){
         super(uuid);
         this.level = LogStatic.level.day;

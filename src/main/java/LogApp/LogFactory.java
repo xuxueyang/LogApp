@@ -48,7 +48,7 @@ public class LogFactory {
         return logOverPanel;
     }
     public static JButton getShowOverButton(){
-        JButton jButton = new JButton();
+        final JButton jButton = new JButton();
         jButton.setText("已完成");
         jButton.setSize(LogStatic.menuWidth,LogStatic.button_height);
         jButton.addActionListener(new ActionListener() {
@@ -61,7 +61,7 @@ public class LogFactory {
         return  jButton;
     }
     public static JButton getShowNoOverButton(){
-        JButton jButton = new JButton();
+        final JButton jButton = new JButton();
         jButton.setText("未完成");
         jButton.setSize(LogStatic.menuWidth,LogStatic.button_height);
         jButton.addActionListener(new ActionListener() {
@@ -106,7 +106,7 @@ public class LogFactory {
         return button;
     }
     public static JFrame getCalendarJFrame(){
-        JFrame jFrame = new JFrame();
+        final JFrame jFrame = new JFrame();
         jFrame.setResizable(false);
         jFrame.setUndecorated(true);
         CalendarPanel p = new CalendarPanel(null, LogStatic.Date_Pattern);

@@ -26,7 +26,7 @@ public class LogNotification {
     }
     public  static synchronized ArrayList<LogEvent> broadcast(LogEvent logEvent){
 //        boolean result = false;
-        ArrayList<LogEvent> logEventList = new ArrayList<>();
+        ArrayList<LogEvent> logEventList = new ArrayList<LogEvent>();
         try{
             Log.addLogEvent(logEvent);
             for(LogCtrInterface tmp: LogNotification.receivers){

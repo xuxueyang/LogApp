@@ -17,7 +17,7 @@ public  class Log {
 	private Log() {
 		// private方法，使得无法被实例化
 	}
-	private  static List<LogEvent> logEventList = new ArrayList<>();
+	private  static List<LogEvent> logEventList = new ArrayList<LogEvent>();
 	public static  synchronized void addLogEvent(LogEvent logEvent){
 		//判断，如果UUID为空，那么不做记录=-=这样阔以避免一些无意义的拖动的操作
 		if(logEvent.getUuid()!=null){
