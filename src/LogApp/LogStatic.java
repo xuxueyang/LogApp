@@ -1,0 +1,161 @@
+package LogApp;
+
+import LogApp.Tool.LogGenerator;
+
+import java.awt.*;
+import java.nio.charset.Charset;
+
+/**
+ * Created by 徐雪阳 on 2017/12/5.
+ */
+public class LogStatic {
+    public enum  Log_classify{
+        SystemLog,
+        OperatorLog
+    }
+    public enum mark_star{
+        DarkGray,
+        Blue,
+        Red,
+        Green,
+        Cyan
+    }
+    public  enum classify {
+        Default,
+        Work,
+        Game,
+        Study,
+        Think
+    }
+    public enum priority {
+        Default,
+        Normal,
+        High,
+        Low,
+        Significance
+    }
+    public  enum level{
+        ERROR,
+        base,
+        each,
+        day,
+//        noteTree,
+        month,
+        year,
+        week
+    }
+    public enum Type{
+        Tel,
+        Day
+    }
+
+    /**
+     * 展现不同功能的面板，反射初始化加入这些面板。命名应该与resource中一致！否则会无法识别出这个模块
+     */
+    public enum FunctionPanel{
+        showAllNoOver,
+        noteTree,
+    }
+    public  enum resource{
+        each_changeOverState,
+        each_changeMessage,
+        each_del,
+        each_load,
+        tel_remark_visible,
+        tel_load,
+        tel_changeMessage,
+        day_remark_visible,
+        day_load,
+        day_changeMessage,
+//        day_create, //因为从来都是在加载的时候创建LogDay，所以不需要协议
+//        day_save,
+//        detail_show,
+//        detail_hide,
+        detail_visible,
+        detail_del,
+        detail_changeMessage,
+        detail_changeClassify,
+        detail_changePriority,
+        detail_changeMarkStar,
+        detail_move,//这个用于实时的修改窗口的位置，通知显示细节的面板能够跟随 UUID为空，不做记录
+        //主界面的功能
+        mainFun_showAllOver,
+        mainFun_showAllNoOver,
+        mainFun_noteTree,
+        menu_add,
+        menu_can_add,
+        menu_chooseCalender,
+        global_data_save,//UUID为空，不做记录
+        global_data_init,
+        global_exit,
+        Return,
+    }
+    //Log记录延时
+    public static long Operator_Delay = 2000;
+    //全局，日期
+    public static String GLOBAL_DATE ;//= LogGenerator.getNowDate();
+    {
+        GLOBAL_DATE  = LogGenerator.getNowDate();
+    }
+    //绝对路径
+//    public static String REAL_PATH = ClassLoader.getSystemResource("").toString();
+    public static String REAL_PATH = "D:/xxy/Log_Diary";//路径
+    public static String REAL_PATH_NOTETREE = REAL_PATH + "/NoteTree";//树形思维树
+    public static String REAL_PATH_DIARY = REAL_PATH + "/Diary";//个人日志
+    public static String REAL_PATH_LOG = REAL_PATH + "/" + Log_classify.SystemLog.name();//系统日志
+    public static String REAL_PATH_OPERATOR = REAL_PATH + "/" + Log_classify.OperatorLog.name();//操作数据
+    public static String ENCODE = Charset.defaultCharset().displayName();
+    //LogEvent缓存大小
+    public static int NLogEventCacheSize = 10;
+    //LogDate
+    public static String Date_Pattern = "yyyy-MM-dd";
+    public static String Date_Path_Pattern = "yyyy/MM/dd";
+    //JMaxMainJFrame
+    public static int maxDefaultWidth = 950;
+    public static int maxDefaultHeight = 850;
+
+    //JFrame
+//    public static int maxTask = 6; //最多显示6条记录
+    public static int defaultWidth = 680;
+    public static int defaultHeight = 830;
+    public static String ChangeStateString = ".*";
+//    居中显示
+//    public static int x =  (int)Math.round((Toolkit.getDefaultToolkit().getScreenSize().getWidth()-defaultWidth)/2);
+//    public static int y =  (int)Math.round((Toolkit.getDefaultToolkit().getScreenSize().getHeight()-defaultHeight)/2);
+//    右上显示
+    public static int x =  (int)Math.round((Toolkit.getDefaultToolkit().getScreenSize().getWidth()-defaultWidth-200));
+    public static int y =  100;
+
+    //LogMenu
+    public static  int menuWidth = defaultWidth;
+    public static  int menuHeight = 200;
+    //JEachPanel
+    public static int eachPanelCheckBoxWidth = 80;
+    public static int eachPanelCheckBoxHeight = 80;
+    public static int eachPanel_detailButtonWidth = 100;
+    public static int eachPanel_detailButtonHeight = 80;
+    public static int eachPanel_delButtonWidth = 100;
+    public static int eachPanel_delButtonHeight = 80;
+    //LogTextArea
+    public static int LogTextArea_maxRow = 1;
+//    public static int LogTextArea_cacheNum = 10;
+    //JButton
+    public static  int button_height = 100;
+    //ShowDetail面板大小
+    public static int detailFrameBubbleWidth = 50;
+    public static int detailFrameWidth = 200;
+    public static int detailFrameHeight = 400;
+    //Timer
+    public static long delay = 1000;
+    public static long period = 4000;
+//    //ENCODE
+//    public static String encode = Charset.defaultCharset().displayName();
+//    public static byte[] lineSep;
+//    {
+//        try {
+//            lineSep = System.getProperty("line.separator").getBytes(encode);
+//        }catch (Exception e){
+//            lineSep = "\n".getBytes();
+//        }
+//    }
+}
