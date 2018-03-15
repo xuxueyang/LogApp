@@ -5,6 +5,8 @@ import LogApp.Tool.Log;
 import LogApp.Tool.LogGenerator;
 
 public class LogDetail {
+    public boolean isEncode = false;//默认没有加密
+
     private String remarks;
     private String parentUUID;
     //标记

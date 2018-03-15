@@ -48,14 +48,16 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         //避免日后隐藏的无限循环
         if(!ta.getText().equals(text)){
             this.ta.setText(text);
+            //TODO notepad不应该和day标记耦合在一起
+
             LogNotification.broadcast(new LogEvent(text,LogStatic.resource.day_changeMessage.name(),uuid));
         }
     }
     public String getText(){
         return this.ta.getText();
     }
-    public Notepad(){
-        this(null);
+    public Notepad(LogStatic.resource_prefix prefix){
+        this(null,prefix);
     }
     public void init(String title){
         this.mainFrame.setTitle(title);
@@ -63,7 +65,7 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         this.ta.setText("");
     }
     //构造函数
-    public Notepad(JFrame frame){
+    public Notepad(JFrame frame, final LogStatic.resource_prefix prefix){
         if(frame==null){
             frame = new JFrame ("Notepad v0.99       by Launching");
             frame.setSize(800 , 500);
@@ -163,7 +165,9 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         mainFrame.addWindowListener(new WindowAdapter (){ //关闭窗口
             public void windowClosing(WindowEvent e) {
 //                System.exit(0);
-                LogNotification.broadcast(new LogEvent(null,LogStatic.resource.day_remark_visible.name(),uuid));
+//                LogNotification.broadcast(new LogEvent(null,prefix.name() + LogStatic.resource.day_remark_visible.name(),uuid));
+                LogNotification.broadcast(new LogEvent(null,prefix.name() + LogStatic.resource_suffix._remark_visible.name(),uuid));
+
             }
         });
 
@@ -174,7 +178,9 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
                 super.keyTyped(e);
                 textValueChanged = true ; //键盘按键按下即导致文本修改
                //TODO 广播day被修改。
-                LogNotification.broadcast(new LogEvent(ta.getText(),LogStatic.resource.day_changeMessage.name(),uuid));
+                LogNotification.broadcast(new LogEvent(ta.getText(),
+                        prefix.name()+LogStatic.resource_suffix._changeMessage.name(),
+                        uuid));
             }
             @Override
             public void keyPressed(KeyEvent e) {
@@ -356,7 +362,8 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
             public void actionPerformed(ActionEvent e){
 //                mainFrame.setVisible(false);
 //                System.exit(0);
-                LogNotification.broadcast(new LogEvent(null,LogStatic.resource.day_remark_visible.name()));
+                LogNotification.broadcast(new LogEvent(null,
+                        prefix.name()+LogStatic.resource_suffix._remark_visible.name()));
             }
         });
 

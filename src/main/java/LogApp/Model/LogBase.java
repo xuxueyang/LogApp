@@ -17,6 +17,8 @@ public  class LogBase {
      */
     protected boolean isDiary = false;
     public boolean isExist = true;//采用逻辑删除
+    public boolean isEncode = false;//默认没有加密
+
     protected String uuid;
     protected Date createDate;
     protected Date updateData;

@@ -144,7 +144,7 @@ public class LogFactory {
             JFrame mainFrame = new JFrame (title);
             mainFrame.setSize(rectangle.width , rectangle.height);
             mainFrame.setResizable(true);//不可更改大小
-            notepad = new Notepad(mainFrame);
+            notepad = new Notepad(mainFrame,LogStatic.resource_prefix.tel);
             //mainFrame.setLocation( rectangle.x ,rectangle.y);// 起始位置
         }else{
             notepad.init(title);
@@ -157,7 +157,7 @@ public class LogFactory {
             JFrame mainFrame = new JFrame (title);
             mainFrame.setSize(rectangle.width , rectangle.height);
             mainFrame.setResizable(true);//不可更改大小
-            telNotepad = new Notepad(mainFrame);
+            telNotepad = new Notepad(mainFrame,LogStatic.resource_prefix.tel);
             //mainFrame.setLocation( rectangle.x ,rectangle.y);// 起始位置
         }else{
             telNotepad.init(title);

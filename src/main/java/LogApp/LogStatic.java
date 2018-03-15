@@ -56,6 +56,20 @@ public class LogStatic {
         showAllNoOver,
         noteTree,
     }
+    public enum  resource_prefix{
+        each,
+        tel,
+        day,
+        detail,
+        mainFun,
+        menu,
+        gloabal,
+        Return
+    }
+    public enum  resource_suffix{
+        _remark_visible,
+        _changeMessage,
+    }
     public  enum resource{
         each_changeOverState,
         each_changeMessage,

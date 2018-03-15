@@ -54,6 +54,8 @@ public class LogFileLoadAndSave {
     public  <T> T load(String PUuid, Class<T> T){
         String json = loadJsonByPUUID(PUuid);
         if(!"".equals(json)){
+            //TODO 添加解密功能,反射查看有没有解密的字段，有的话，对其中的文本解密。
+
             return LogGenerator.unserialize(json,T);
         }
         return  null;
@@ -116,6 +118,7 @@ public class LogFileLoadAndSave {
         }
         file = new File(logBase.getFilePath());
         FileOutputStream o=new FileOutputStream(file,false);
+        //TODO 加密
         o.write(logBase.toString().getBytes(LogStatic.ENCODE));
         o.close();
     }
@@ -126,6 +129,7 @@ public class LogFileLoadAndSave {
         }
         file = new File(noteTreeBase.getFilePath());
         FileOutputStream o=new FileOutputStream(file,false);
+        // TODO 加密
         o.write(noteTreeBase.toString().getBytes(LogStatic.ENCODE));
         o.close();
     }

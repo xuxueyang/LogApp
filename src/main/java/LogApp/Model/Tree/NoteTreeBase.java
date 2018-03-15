@@ -16,7 +16,7 @@ enum TreeLevel{
 public class NoteTreeBase {
     protected boolean isDiary = false;
     public boolean isExist = true;//采用逻辑删除
-
+    public boolean isEncode = false;//默认没有加密
     protected String UUID;
     protected TreeLevel treeLevel;
     protected NoteTreeBase parrent;
