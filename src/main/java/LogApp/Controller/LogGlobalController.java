@@ -9,7 +9,10 @@ import LogApp.Tool.Log;
 import LogApp.Tool.LogEvent;
 import LogApp.Tool.LogGenerator;
 import LogApp.Tool.LogNotification;
+import LogApp.Tool.UploadFile.LinuxSFTP;
+import LogApp.Tool.UploadFile.Ping;
 import LogApp.View.LogJFrame;
+import com.jcraft.jsch.ChannelSftp;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -105,6 +108,17 @@ public class LogGlobalController implements LogCtrInterface {
         Log.refreshCache();
         return new LogEvent(true,LogStatic.resource.Return.name(),logEvent.getUuid());
     }
+    private LogEvent global_file_upload(LogEvent logEvent){
+        //打包本地文件，上传到服务器。
+        // TODO 先判断有没有联网，如果没有显示信息
+//        if(Ping.ping())
+        //TODO 压缩
+        //TODO 上传
+        //TODO 删除压缩文件（或之前的压缩文件存在内存中）
+//        ChannelSftp channelSftp = LinuxSFTP.getConnect();
+//        LinuxSFTP.upload("上传文件名",channelSftp);
+        return new LogEvent(true,LogStatic.resource.Return.name(),logEvent.getUuid());
+    }
     @Override
     public LogEvent execute(LogEvent logEvent) {
         switch (logEvent.getResource()){
@@ -114,6 +128,9 @@ public class LogGlobalController implements LogCtrInterface {
                 return this.global_data_init(logEvent);
             case "global_exit":
                 return this.global_exit(logEvent);
+//            case LogStatic.resource.global_file_upload.name():
+            case "global_file_upload":
+                return this.global_file_upload(logEvent);
             default:
                 return null;
         }
