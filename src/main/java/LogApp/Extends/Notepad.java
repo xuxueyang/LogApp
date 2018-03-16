@@ -24,6 +24,7 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
     private JMenuItem miFont , miLowtoCapital, miCapitaltoLow ,miEncrypt , miDisencrypt;//格式菜单项：字体
     private JMenuItem miAboutNotepad;//帮助菜单项：关于记事本
 
+
     private JTextArea ta;//文本区
 
     private String tempString;//临时字符串,用于存储需要复制粘贴的字符串
@@ -33,6 +34,8 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
     private int id_font ;//字体
 
     String fileName = "";//上次保存后的文件名和地址
+
+    private LogStatic.resource_prefix prefix ;
 
     public void changeVisible(){
         this.changeVisible(new Point(100,200));
@@ -48,9 +51,9 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         //避免日后隐藏的无限循环
         if(!ta.getText().equals(text)){
             this.ta.setText(text);
-            //TODO notepad不应该和day标记耦合在一起
-
-            LogNotification.broadcast(new LogEvent(text,LogStatic.resource.day_changeMessage.name(),uuid));
+            LogNotification.broadcast(new LogEvent(text,
+                    prefix.name() + LogStatic.resource_suffix._changeMessage.name(),
+                    uuid));
         }
     }
     public String getText(){
@@ -162,10 +165,10 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         //////////////////////////////////////////////////////////////////////////////////
 
 //主框架
+        this.prefix = prefix;
         mainFrame.addWindowListener(new WindowAdapter (){ //关闭窗口
             public void windowClosing(WindowEvent e) {
 //                System.exit(0);
-//                LogNotification.broadcast(new LogEvent(null,prefix.name() + LogStatic.resource.day_remark_visible.name(),uuid));
                 LogNotification.broadcast(new LogEvent(null,prefix.name() + LogStatic.resource_suffix._remark_visible.name(),uuid));
 
             }
