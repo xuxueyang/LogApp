@@ -13,8 +13,8 @@
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogJFrame.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogOverPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogTextArea.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/example/FtpClientUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/example/HideFrame.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/example/RpcServiceCommand.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/example/e_20180315/FtpClientUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/example/e_20180315/HideFrame.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/example/e_20180315/RpcServiceCommand.java" charset="UTF-8" />
   </component>
 </project>

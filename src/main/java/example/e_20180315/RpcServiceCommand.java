@@ -1,4 +1,4 @@
-package example;
+package example.e_20180315;
 
 import ch.ethz.ssh2.Connection;
 import ch.ethz.ssh2.Session;

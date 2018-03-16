@@ -1,4 +1,4 @@
-package example;
+package example.e_20180315;
 import com.trolltech.qt.gui.*;
 public class QTTest01 extends QDialog{
     QPushButton btnShow;

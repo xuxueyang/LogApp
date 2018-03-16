@@ -1,4 +1,4 @@
-package example.ProducerConsumerTest;
+package example.e_20180315.ProducerConsumerTest;
 
 public class Producer extends Thread {
               private CubbyHole cubbyhole;

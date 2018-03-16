@@ -1,8 +1,7 @@
-package LogApp.Tool.LinuxTool;
+package LogApp.Tool.UploadFile;
 
 import LogApp.Tool.MD5Util;
 import com.jcraft.jsch.*;
-import example.SFTPExample;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -149,8 +148,8 @@ public class LinuxSFTP {
 
 //    public static void main(String[] args) {
 //        ChannelSftp channelSftp = LinuxSFTP.getConnect();
-////        LinuxSFTP.upload("D:\\xxy\\3.txt",channelSftp);
-//        LinuxSFTP.download("3.txt","D:\\xxy\\4.txt",channelSftp);
+//        LinuxSFTP.upload("D:\\xxy\\Log_Diary.rar",channelSftp);
+//        LinuxSFTP.download("Log_Diary.rar","D:\\Log_Diary.rar",channelSftp);
 //
 ////        SFTPExample sf = new SFTPExample();
 ////        String host = "192.168.0.1";
