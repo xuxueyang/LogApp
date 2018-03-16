@@ -207,21 +207,21 @@ public class FileZipPassUtils {
         }
     }
 
-    public static void main(String[] args) {
-
-        String adress = FileZipPassUtils.zip("E:\\201712", "E:\\201712zip\\201712.zip", "123456");
-        System.out.println(adress);
-
-        System.out.println("======================================================================");
-
-        try {
-          File[] files = FileZipPassUtils.unzip("E:\\201712zip\\201712.zip", "E:\\201712files","123456");
-          for (int i = 0; i < files.length; i++) {
-              System.out.println(files[i]);
-          }
-      } catch (ZipException e) {
-          System.out.println("文件不存在或解压密码错误");
-      }
-    }
+//    public static void main(String[] args) {
+//
+//        String adress = FileZipPassUtils.zip("E:\\201712", "E:\\201712zip\\201712.zip", "123456");
+//        System.out.println(adress);
+//
+//        System.out.println("======================================================================");
+//
+//        try {
+//          File[] files = FileZipPassUtils.unzip("E:\\201712zip\\201712.zip", "E:\\201712files","123456");
+//          for (int i = 0; i < files.length; i++) {
+//              System.out.println(files[i]);
+//          }
+//      } catch (ZipException e) {
+//          System.out.println("文件不存在或解压密码错误");
+//      }
+//    }
 
 }

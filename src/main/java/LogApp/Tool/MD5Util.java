@@ -1,4 +1,4 @@
-package example;
+package LogApp.Tool;
 
 import java.security.MessageDigest;
 public class MD5Util {
@@ -30,7 +30,7 @@ public class MD5Util {
             return null;
         }
     }
-    public static void main(String[] args) {
-        System.out.print(MD5Util.MD5("password"));
-    }
+//    public static void main(String[] args) {
+//        System.out.print(MD5Util.MD5("password"));
+//    }
 }
