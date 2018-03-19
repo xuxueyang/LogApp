@@ -127,7 +127,7 @@ public class NoteTreeBase {
     }
     public String getFilePath(){
         NoteTreeBase Pparrent = getTop();
-        return getFolderPath() + "/" + Pparrent.UUID + ".txt";
+        return getFolderPath() + "/" + Pparrent.UUID + "."+LogStatic.FileType.txt.name();
     }
     @Override
     public String toString() {

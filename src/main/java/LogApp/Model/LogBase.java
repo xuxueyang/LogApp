@@ -123,12 +123,12 @@ public  class LogBase {
         }else{
             path = this.belongDateStr.replace("-","/");
         }
-//        path =  LogStatic.REAL_PATH + path+ "/"+ uuid + ".txt";
         path = LogStatic.REAL_PATH_DIARY + "/" + path;//回头和“Log”区别
         return path;
     }
     public String getFilePath(){
-        String path = getFolderPath() + "/" + uuid + ".txt";
+        //TODO 以后把文件写成.dat的后缀吧。
+        String path = getFolderPath() + "/" + uuid + "."+LogStatic.FileType.txt.name();
         return path;
     }
     @Override

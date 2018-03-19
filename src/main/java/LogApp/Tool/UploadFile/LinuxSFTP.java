@@ -14,6 +14,7 @@ public class LinuxSFTP {
     private  static  String username = "root";
     private  static  String password = "Xuxueyang1";
     private  static  String uploadServerPath = "/root/LogAppFile";
+    private  static  String uploadNormalFileServerPath = "/root/MyFile";
 
     //单例连接
     private static LinuxSFTP linkSftp = null;
@@ -77,8 +78,11 @@ public class LinuxSFTP {
         return sftp;
     }
 
-    public static void upload(String uploadFilePath,ChannelSftp sftp){
+    public static void uploadLogFile(String uploadFilePath,ChannelSftp sftp){
         LinuxSFTP.upload(uploadServerPath,uploadFilePath,sftp);
+    }
+    public static void uploadNormalFile(String uploadFilePath,ChannelSftp sftp){
+        LinuxSFTP.upload(uploadNormalFileServerPath,uploadFilePath,sftp);
     }
     /**
      * 上传文件
@@ -146,32 +150,4 @@ public class LinuxSFTP {
         return sftp.ls(directory);
     }
 
-    public static void main(String[] args) {
-        ChannelSftp channelSftp = LinuxSFTP.getConnect();
-        LinuxSFTP.upload("D:\\xxy\\Log_Diary.rar",channelSftp);
-        LinuxSFTP.download("Log_Diary.rar","D:\\Log_Diary.rar",channelSftp);
-
-//
-////        SFTPExample sf = new SFTPExample();
-////        String host = "192.168.0.1";
-////        int port = 22;
-////        String username = "root";
-////        String password = "root";
-////        String directory = "/home/httpd/test/";
-////        String uploadFile = "D:\\tmp\\upload.txt";
-////        String downloadFile = "upload.txt";
-////        String saveFile = "D:\\tmp\\download.txt";
-////        String deleteFile = "delete.txt";
-////        ChannelSftp sftp=sf.connect(host, port, username, password);
-////        sf.upload(directory, uploadFile, sftp);
-////        sf.download(directory, downloadFile, saveFile, sftp);
-////        sf.delete(directory, deleteFile, sftp);
-////        try{
-////            sftp.cd(directory);
-////            sftp.mkdir("ss");
-////            System.out.println("finished");
-////        }catch(Exception e){
-////            e.printStackTrace();
-////        }
-    }
 }

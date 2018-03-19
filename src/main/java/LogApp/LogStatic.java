@@ -48,7 +48,10 @@ public class LogStatic {
         Tel,
         Day
     }
-
+    public enum FileType{
+        txt,
+        dat,
+    }
     /**
      * 展现不同功能的面板，反射初始化加入这些面板。命名应该与resource中一致！否则会无法识别出这个模块
      */
