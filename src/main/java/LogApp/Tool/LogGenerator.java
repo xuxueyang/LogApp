@@ -4,7 +4,6 @@ import LogApp.LogStatic;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-import javax.swing.*;
 import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
