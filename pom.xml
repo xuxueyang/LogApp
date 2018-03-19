@@ -23,6 +23,18 @@
         </plugins>
     </build>
     <dependencies>
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jdbc &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.tomcat</groupId>-->
+            <!--<artifactId>tomcat-jdbc</artifactId>-->
+            <!--<version>8.5.15</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-juli &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.tomcat</groupId>-->
+            <!--<artifactId>tomcat-juli</artifactId>-->
+            <!--<version>8.5.15</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
