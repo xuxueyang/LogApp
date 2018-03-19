@@ -64,6 +64,7 @@ public class LogStatic {
         mainFun,
         menu,
         gloabal,
+        file,
         Return
     }
     public enum  resource_suffix{
@@ -71,7 +72,7 @@ public class LogStatic {
         _changeMessage,
     }
     public  enum resource{
-        global_file_upload,
+        file_file_upload,
         each_changeOverState,
         each_changeMessage,
         each_del,

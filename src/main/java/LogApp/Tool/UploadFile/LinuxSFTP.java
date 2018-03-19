@@ -146,10 +146,11 @@ public class LinuxSFTP {
         return sftp.ls(directory);
     }
 
-//    public static void main(String[] args) {
-//        ChannelSftp channelSftp = LinuxSFTP.getConnect();
-//        LinuxSFTP.upload("D:\\xxy\\Log_Diary.rar",channelSftp);
-//        LinuxSFTP.download("Log_Diary.rar","D:\\Log_Diary.rar",channelSftp);
+    public static void main(String[] args) {
+        ChannelSftp channelSftp = LinuxSFTP.getConnect();
+        LinuxSFTP.upload("D:\\xxy\\Log_Diary.rar",channelSftp);
+        LinuxSFTP.download("Log_Diary.rar","D:\\Log_Diary.rar",channelSftp);
+
 //
 ////        SFTPExample sf = new SFTPExample();
 ////        String host = "192.168.0.1";
@@ -172,5 +173,5 @@ public class LinuxSFTP {
 ////        }catch(Exception e){
 ////            e.printStackTrace();
 ////        }
-//    }
+    }
 }

@@ -22,6 +22,7 @@ public   class LogLogic implements LogCtrInterface,KeyListener{
     private LogDetailQTController logDetailQTController = new LogDetailQTController();
     private LogMainFunController logMainFunController = new LogMainFunController();
     private LogTelController logTelController = new LogTelController();
+    private LogFileController logFileController = new LogFileController();
     /**
      * 单例,分发任务
      */
@@ -54,6 +55,8 @@ public   class LogLogic implements LogCtrInterface,KeyListener{
                 return logMainFunController.execute(e);
             case "tel":
                 return logTelController.execute(e);
+            case "file":
+                return logFileController.execute(e);
             default:
                 return null;
         }
