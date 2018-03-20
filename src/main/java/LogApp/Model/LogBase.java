@@ -52,7 +52,7 @@ public  class LogBase {
         init(uuid);
     }
     private void init(String uuid){
-        this.createDate = LogGenerator.pattern_timestamp_date(new Date());
+        this.createDate = new Date().getTime();
         this.belongDateStr = LogStatic.GLOBAL_DATE;
         this.updateDate = this.createDate;
         this.message = "";
@@ -86,7 +86,7 @@ public  class LogBase {
     }
 
     public void update() {
-        this.updateDate = LogGenerator.pattern_timestamp_date(new Date());
+        this.updateDate = new Date().getTime();
         this.isDiary = true;
     }
     public   void save()throws IOException{

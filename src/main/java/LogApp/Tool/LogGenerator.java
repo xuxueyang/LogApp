@@ -5,9 +5,11 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
 import java.awt.*;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.util.UUID;
 
 public class LogGenerator {
@@ -29,11 +31,17 @@ public class LogGenerator {
         String nowDate = formatter.format(date);
         return nowDate;
     }
-    public static Long pattern_timestamp_date(Date date){
-//        SimpleDateFormat formatter = new SimpleDateFormat(LogStatic.Date_Detail_Pattern);
-//        String nowDate = formatter.format(date);
-        Long nowDate = date.getTime();
-        return nowDate;
+    public static String pattern_timestamp_date(String enDate){
+        SimpleDateFormat format2 = new SimpleDateFormat("MMM d, yyyy HH:mm:ss",
+                Locale.ENGLISH);
+        Date date1 = null;
+        try {
+            date1 = format2.parse(enDate);
+            return ""+date1.getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return enDate;
     }
     public static Date changeDetailPatternToDate(Long time){
         return new Date(time);
