@@ -20,8 +20,8 @@ public  class LogBase {
     public boolean isEncode = false;//默认没有加密
 
     protected String uuid;
-    protected Date createDate;
-    protected Date updateData;
+    protected Long createDate;
+    protected Long updateDate;
     protected String belongDateStr;
 //    protected String filePath = "";
     protected LogStatic.classify classify = LogStatic.classify.Default;
@@ -30,12 +30,12 @@ public  class LogBase {
 
     protected String message;
     protected String title;
-    public Date getCreateDate() {
+    public Long getCreateDate() {
         return createDate;
     }
 
-    public Date getUpdateData() {
-        return updateData;
+    public Long getUpdateData() {
+        return updateDate;
     }
 
     public String getLevel() {
@@ -52,9 +52,9 @@ public  class LogBase {
         init(uuid);
     }
     private void init(String uuid){
-        this.createDate = new Date();
+        this.createDate = LogGenerator.pattern_timestamp_date(new Date());
         this.belongDateStr = LogStatic.GLOBAL_DATE;
-        this.updateData = this.createDate;
+        this.updateDate = this.createDate;
         this.message = "";
         this.title = uuid;
         this.uuid = uuid;
@@ -86,7 +86,7 @@ public  class LogBase {
     }
 
     public void update() {
-        this.updateData = new Date();
+        this.updateDate = LogGenerator.pattern_timestamp_date(new Date());
         this.isDiary = true;
     }
     public   void save()throws IOException{
@@ -104,10 +104,10 @@ public  class LogBase {
         }
     }
     public String getBelongDateStr(){
-        if(this.belongDateStr==null){
-            this.belongDateStr=LogGenerator.pattern_date(createDate);
-            update();
-        }
+//        if(this.belongDateStr==null){
+//            this.belongDateStr=LogGenerator.pattern_date(createDate);
+//            update();
+//        }
         return this.belongDateStr;
     }
     public  void del(){

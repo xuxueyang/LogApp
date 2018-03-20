@@ -71,7 +71,7 @@ public class LogGlobalController implements LogCtrInterface {
         list.sort(new Comparator<LogEach>() {
             @Override
             public int compare(LogEach o1, LogEach o2) {
-                return o1.getUpdateData().getTime()>o2.getUpdateData().getTime() ? 1:-1;
+                return o1.getUpdateData()>o2.getUpdateData() ? 1:-1;
             }
         });
         LogEvent logEvent_each = new LogEvent(list, LogStatic.resource.each_load.name());

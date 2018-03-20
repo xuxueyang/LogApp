@@ -55,7 +55,7 @@ public class LogFileLoadAndSave {
         String json = loadJsonByPUUID(PUuid);
         if(!"".equals(json)){
             //TODO 添加解密功能,反射查看有没有解密的字段，有的话，对其中的文本解密。
-
+            //TODO gson解析日期，如果含有Mar这种，会解析数字出错--
             return LogGenerator.unserialize(json,T);
         }
         return  null;

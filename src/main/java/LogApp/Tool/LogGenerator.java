@@ -29,6 +29,15 @@ public class LogGenerator {
         String nowDate = formatter.format(date);
         return nowDate;
     }
+    public static Long pattern_timestamp_date(Date date){
+//        SimpleDateFormat formatter = new SimpleDateFormat(LogStatic.Date_Detail_Pattern);
+//        String nowDate = formatter.format(date);
+        Long nowDate = date.getTime();
+        return nowDate;
+    }
+    public static Date changeDetailPatternToDate(Long time){
+        return new Date(time);
+    }
     public static String getNowDatePath(){
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat(LogStatic.Date_Path_Pattern);

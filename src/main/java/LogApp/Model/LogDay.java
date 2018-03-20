@@ -18,7 +18,7 @@ public class LogDay extends LogBase {
     public LogDay(String uuid){
         super(uuid);
         this.level = LogStatic.level.day;
-        this.title = LogGenerator.pattern_date(this.createDate);
+        this.title = LogGenerator.pattern_date(LogGenerator.changeDetailPatternToDate(this.createDate));
     }
     // 默认是空的，表示单纯的日志，否则根据这个字段，表示每日日志的不同类型：比如技术的tel
     public String type = null;

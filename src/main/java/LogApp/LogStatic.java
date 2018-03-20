@@ -128,6 +128,7 @@ public class LogStatic {
     public static int NLogEventCacheSize = 10;
     //LogDate
     public static String Date_Pattern = "yyyy-MM-dd";
+    public static String Date_Detail_Pattern = "";
     public static String Date_Path_Pattern = "yyyy/MM/dd";
     //JMaxMainJFrame
     public static int maxDefaultWidth = 950;
