@@ -168,6 +168,8 @@ public class LogStatic {
     //Timer
     public static long delay = 1000;
     public static long period = 4000;
+    //×Ö·ûÃû×Ö
+    public static String FontName="¿¬Ìå";
 //    //ENCODE
 //    public static String encode = Charset.defaultCharset().displayName();
 //    public static byte[] lineSep;

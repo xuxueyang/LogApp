@@ -83,7 +83,7 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         ta = new JTextArea (30 ,60);
         ta.setLineWrap(true);
 //        Times New Rome
-        ta.setFont( new Font ( "楷体" , Font.PLAIN , 15));
+        ta.setFont( new Font ( LogStatic.FontName , Font.PLAIN , 15));
         ta.setBackground(new Color(0, 0, 0));
 
         //菜单条
@@ -585,16 +585,16 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
             id_font = ((java.awt.List)e.getSource()).getSelectedIndex();
             switch( id_font){
                 case 0:{
-                    ta.setFont(new Font("楷体", Font.PLAIN ,ta.getFont().getSize()) );//普通文字
+                    ta.setFont(new Font( LogStatic.FontName, Font.PLAIN ,ta.getFont().getSize()) );//普通文字
                     break;
                 }
                 case 1:{
-                    ta.setFont(new Font("楷体" , Font.BOLD ,ta.getFont().getSize()) );//粗体文字
+                    ta.setFont(new Font( LogStatic.FontName , Font.BOLD ,ta.getFont().getSize()) );//粗体文字
                     break;
                 }
                 case 2:{
 //                    Times New Roman
-                    ta.setFont(new Font("楷体" , Font.ITALIC ,ta.getFont().getSize()) );//斜体文字
+                    ta.setFont(new Font( LogStatic.FontName , Font.ITALIC ,ta.getFont().getSize()) );//斜体文字
                     break;
                 }
             }
