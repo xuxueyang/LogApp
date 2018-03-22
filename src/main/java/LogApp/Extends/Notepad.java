@@ -82,7 +82,8 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         mb = new JMenuBar ();
         ta = new JTextArea (30 ,60);
         ta.setLineWrap(true);
-        ta.setFont( new Font ( "Times New Rome" , Font.PLAIN , 15));
+//        Times New Rome
+        ta.setFont( new Font ( "楷体" , Font.PLAIN , 15));
         ta.setBackground(new Color(0, 0, 0));
 
         //菜单条
@@ -572,21 +573,28 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
         });
 
     }
-
+    public static void main(String[] args) {
+        GraphicsEnvironment e = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        String[] fontName = e.getAvailableFontFamilyNames();
+        for (int i = 0; i < fontName.length; i++) {
+            System.out.println(fontName[i]);
+        }
+    }
     class MyItemListener_font implements ItemListener { //字体监听器
         public void itemStateChanged(ItemEvent e) {
             id_font = ((java.awt.List)e.getSource()).getSelectedIndex();
             switch( id_font){
                 case 0:{
-                    ta.setFont(new Font("Times New Roman", Font.PLAIN ,ta.getFont().getSize()) );//普通文字
+                    ta.setFont(new Font("楷体", Font.PLAIN ,ta.getFont().getSize()) );//普通文字
                     break;
                 }
                 case 1:{
-                    ta.setFont(new Font("Times New Roman" , Font.BOLD ,ta.getFont().getSize()) );//粗体文字
+                    ta.setFont(new Font("楷体" , Font.BOLD ,ta.getFont().getSize()) );//粗体文字
                     break;
                 }
                 case 2:{
-                    ta.setFont(new Font("Times New Roman" , Font.ITALIC ,ta.getFont().getSize()) );//斜体文字
+//                    Times New Roman
+                    ta.setFont(new Font("楷体" , Font.ITALIC ,ta.getFont().getSize()) );//斜体文字
                     break;
                 }
             }
