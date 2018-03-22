@@ -8,5 +8,6 @@ public class UploadLogFile {
         ChannelSftp channelSftp = LinuxSFTP.getConnect();
         LinuxSFTP.uploadLogFile("D:\\xxy\\Log_Diary.rar",channelSftp);
 //        LinuxSFTP.download("Log_Diary.rar","D:\\Log_Diary.rar",channelSftp);
+        System.exit(0);
     }
 }

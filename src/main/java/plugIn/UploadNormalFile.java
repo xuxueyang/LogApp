@@ -10,6 +10,7 @@ public class UploadNormalFile {
         ChannelSftp channelSftp = LinuxSFTP.getConnect();
         LinuxSFTP.uploadNormalFile("D:\\browser.rar",channelSftp);
 //        LinuxSFTP.download("Log_Diary.rar","D:\\Log_Diary.rar",channelSftp);
+        System.exit(0);
     }
 
 }
