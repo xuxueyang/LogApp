@@ -8,6 +8,7 @@ import java.nio.charset.Charset;
 /**
  * Created by ÐìÑ©Ñô on 2017/12/5.
  */
+
 public class LogStatic {
     public enum  Log_classify{
         SystemLog,
@@ -170,6 +171,7 @@ public class LogStatic {
     public static long period = 4000;
     //×Ö·ûÃû×Ö
     public static String FontName="¿¬Ìå";
+    public static int FontSize=14;
 //    //ENCODE
 //    public static String encode = Charset.defaultCharset().displayName();
 //    public static byte[] lineSep;

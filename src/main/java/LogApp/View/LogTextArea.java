@@ -45,6 +45,8 @@ public class LogTextArea extends JTextArea {
 
     public LogTextArea(final String uuid, String str, boolean isOver){
         super(1,col);
+        //TODO ÐÞ¸Ä×ÖÌå±ÜÃâÂÒÂë
+        this.setFont(new Font(LogStatic.FontName, Font.PLAIN,LogStatic.FontSize));
         this.uuid = uuid;
         int max = LogStatic.menuWidth-LogStatic.eachPanelCheckBoxWidth-10-LogStatic.eachPanel_detailButtonWidth-LogStatic.eachPanel_delButtonWidth;
         while(getColumnWidth()*col>max){
