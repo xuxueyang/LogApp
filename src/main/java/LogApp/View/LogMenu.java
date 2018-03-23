@@ -25,6 +25,8 @@ public class LogMenu extends JPanel {
     private JButton showLogDay;
     // 显示技术收集日志的按钮
     private JButton showLogTel;
+    //点击显示文件上传按钮
+    private JButton chooseUploadFile;
     public LogMenu(){
         this.init();
     }
@@ -49,21 +51,23 @@ public class LogMenu extends JPanel {
         });
         this.add(gregorianCalendarButton);
         this.showLogDay = LogFactory.getLogDayButton(120,this.getHeight()-20);
-        this.showLogDay.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showLogDayJFrame();
-            }
-        });
+//        this.showLogDay.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                showLogDayJFrame();
+//            }
+//        });
         this.add(this.showLogDay);
         this.showLogTel = LogFactory.getLogTelButton(120,this.getHeight()-20);
-        this.showLogTel.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showLogTelJFrame();
-            }
-        });
+//        this.showLogTel.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                showLogTelJFrame();
+//            }
+//        });
         this.add(this.showLogTel);
+        this.chooseUploadFile = LogFactory.getChooseUploadFile(120,this.getHeight()-20);
+
     }
     private void add(){
         //因为还没做滚动，先判断能不能创建
@@ -96,22 +100,22 @@ public class LogMenu extends JPanel {
             calendarJFrame.setVisible(false);
         }
     }
-    private void showLogDayJFrame(){
-//        LogEvent logEvent;
-//        this.isShowLogDay = !this.isShowLogDay;
-//        if(this.isShowLogDay){
-////            this.gregorianCalendarButton.getText()
-//            logEvent = new LogEvent(null,LogStatic.resource.day_remark_show.name());
-//        }else {
-//            logEvent = new LogEvent(null,LogStatic.resource.day_remark_hide.name());
-//        }
-        LogEvent logEvent = new LogEvent(null,LogStatic.resource.day_remark_visible.name());
-        LogNotification.broadcast(logEvent);
-    }
-    private void showLogTelJFrame(){
-        LogEvent logEvent = new LogEvent(null,LogStatic.resource.tel_remark_visible.name());
-        LogNotification.broadcast(logEvent);
-    }
+//    private void showLogDayJFrame(){
+////        LogEvent logEvent;
+////        this.isShowLogDay = !this.isShowLogDay;
+////        if(this.isShowLogDay){
+//////            this.gregorianCalendarButton.getText()
+////            logEvent = new LogEvent(null,LogStatic.resource.day_remark_show.name());
+////        }else {
+////            logEvent = new LogEvent(null,LogStatic.resource.day_remark_hide.name());
+////        }
+//        LogEvent logEvent = new LogEvent(null,LogStatic.resource.day_remark_visible.name());
+//        LogNotification.broadcast(logEvent);
+//    }
+//    private void showLogTelJFrame(){
+//        LogEvent logEvent = new LogEvent(null,LogStatic.resource.tel_remark_visible.name());
+//        LogNotification.broadcast(logEvent);
+//    }
     public void hasChooseCalendar(String data){
         if(calendarJFrame!=null){
             calendarJFrame.setVisible(false);

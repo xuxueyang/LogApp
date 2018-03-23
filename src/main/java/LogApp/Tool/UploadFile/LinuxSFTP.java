@@ -94,7 +94,9 @@ public class LinuxSFTP {
         try {
             sftp.cd(directory);
             File file=new File(uploadFile);
-            sftp.put(new FileInputStream(file), file.getName());
+            FileInputStream fileInputStream = new FileInputStream(file);
+            sftp.put(fileInputStream, file.getName());
+            fileInputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -114,7 +116,9 @@ public class LinuxSFTP {
         try {
             sftp.cd(directory);
             File file=new File(saveFile);
-            sftp.get(downloadFile, new FileOutputStream(file));
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            sftp.get(downloadFile,fileOutputStream);
+            fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

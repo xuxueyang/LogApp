@@ -130,12 +130,42 @@ public class LogFactory {
         JButton button = new JButton();
         button.setText("日志");
         button.setSize(width,height);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                showLogDayJFrame();
+                LogEvent logEvent = new LogEvent(null,LogStatic.resource.day_remark_visible.name());
+                LogNotification.broadcast(logEvent);
+            }
+        });
         return button;
     }
     public static JButton getLogTelButton(int width,int height){
         JButton button = new JButton();
         button.setText("技术文档搜集");
         button.setSize(width,height);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                showLogTelJFrame();
+                LogEvent logEvent = new LogEvent(null,LogStatic.resource.tel_remark_visible.name());
+                LogNotification.broadcast(logEvent);
+            }
+        });
+        return button;
+    }
+    public static JButton getChooseUploadFile(int width,int height){
+        JButton button = new JButton();
+        button.setText("上传文件");
+        button.setSize(width,height);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                LogEvent logEvent = new LogEvent(null,LogStatic.resource.tel_remark_visible.name());
+//                LogNotification.broadcast(logEvent);
+                //TODO 跳出文件选择框
+            }
+        });
         return button;
     }
     private static Notepad notepad;
