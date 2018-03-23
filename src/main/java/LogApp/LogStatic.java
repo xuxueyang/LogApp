@@ -88,6 +88,7 @@ public class LogStatic {
     }
     public  enum resource{
         file_file_upload,
+        file_file_down,
         each_changeOverState,
         each_changeMessage,
         each_del,

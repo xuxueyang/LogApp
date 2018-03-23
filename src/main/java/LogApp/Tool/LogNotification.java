@@ -31,8 +31,10 @@ public class LogNotification {
             Log.addLogEvent(logEvent);
             for(LogCtrInterface tmp: LogNotification.receivers){
                 LogEvent tmpEvent = tmp.execute(logEvent);
-                if(tmpEvent!=null)
+                if(tmpEvent!=null){
                     logEventList.add(tmpEvent);
+                    Log.addLogEvent(tmpEvent);
+                }
             }
         }catch (Exception e){
             e.printStackTrace();

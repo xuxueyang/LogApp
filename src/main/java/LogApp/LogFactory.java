@@ -154,20 +154,33 @@ public class LogFactory {
         });
         return button;
     }
-    public static JButton getChooseUploadFile(int width,int height){
+    public static JButton getChooseUploadFileButton(int width,int height){
         JButton button = new JButton();
         button.setText("上传文件");
         button.setSize(width,height);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                LogEvent logEvent = new LogEvent(null,LogStatic.resource.tel_remark_visible.name());
-//                LogNotification.broadcast(logEvent);
-                //TODO 跳出文件选择框
+                LogEvent logEvent = new LogEvent(null,LogStatic.resource.file_file_upload.name());
+                LogNotification.broadcast(logEvent);
             }
         });
         return button;
     }
+    public static JButton getChooseDownFileButton(int width,int height){
+        JButton button = new JButton();
+        button.setText("下载");
+        button.setSize(width,height);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LogEvent logEvent = new LogEvent(null,LogStatic.resource.file_file_down.name());
+                LogNotification.broadcast(logEvent);
+            }
+        });
+        return button;
+    }
+
     private static Notepad notepad;
     public static Notepad getNotePad(Rectangle rectangle,String  title){
         if(notepad==null){

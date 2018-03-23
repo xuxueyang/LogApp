@@ -1,5 +1,6 @@
 package LogApp.Tool.UploadFile;
 
+import LogApp.Tool.LogGenerator;
 import LogApp.Tool.MD5Util;
 import com.jcraft.jsch.*;
 
@@ -81,8 +82,33 @@ public class LinuxSFTP {
     public static void uploadLogFile(String uploadFilePath,ChannelSftp sftp){
         LinuxSFTP.upload(uploadServerPath,uploadFilePath,sftp);
     }
-    public static void uploadNormalFile(String uploadFilePath,ChannelSftp sftp){
-        LinuxSFTP.upload(uploadNormalFileServerPath,uploadFilePath,sftp);
+    public static boolean upload_file(String uploadFilePath,ChannelSftp sftp){
+        File file = new File(uploadFilePath);
+        if(!file.exists()){
+            return false;
+        }
+        if(file.isFile()){
+            return LinuxSFTP.upload(uploadNormalFileServerPath,uploadFilePath,sftp);
+        }else if(file.isDirectory()){
+            return LinuxSFTP.uploadNormalDir(uploadNormalFileServerPath,uploadFilePath,sftp);
+        }
+        return false;
+    }
+    private static boolean uploadNormalDir(String basePath,String dirPath,ChannelSftp sftp){
+        File file = new File(dirPath);
+        if(!file.isDirectory()||!file.exists()){
+            return false;
+        }
+        String baseName = basePath + "/"+file.getName()+"_"+LogGenerator.getNowDate()+"_"+LogGenerator.getUUID();
+        //递归上传
+        for(File childrenFile:file.listFiles()){
+            if(childrenFile.isFile()){
+                LinuxSFTP.upload(baseName,childrenFile.getAbsolutePath(),sftp);
+            }else{
+                LinuxSFTP.uploadNormalDir(baseName,childrenFile.getAbsolutePath(),sftp);
+            }
+        }
+        return true;
     }
     /**
      * 上传文件
@@ -90,15 +116,17 @@ public class LinuxSFTP {
      * @param uploadFile 要上传的文件
      * @param sftp
      */
-    private static void upload(String directory, String uploadFile, ChannelSftp sftp) {
+    private static boolean upload(String directory, String uploadFile, ChannelSftp sftp) {
         try {
             sftp.cd(directory);
             File file=new File(uploadFile);
             FileInputStream fileInputStream = new FileInputStream(file);
             sftp.put(fileInputStream, file.getName());
             fileInputStream.close();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -112,15 +140,17 @@ public class LinuxSFTP {
      * @param saveFile 存在本地的路径
      * @param sftp
      */
-    private static void download(String directory, String downloadFile,String saveFile, ChannelSftp sftp) {
+    private static boolean download(String directory, String downloadFile,String saveFile, ChannelSftp sftp) {
         try {
             sftp.cd(directory);
             File file=new File(saveFile);
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             sftp.get(downloadFile,fileOutputStream);
             fileOutputStream.close();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
     public static void delete(String deleteFile,ChannelSftp sftp){

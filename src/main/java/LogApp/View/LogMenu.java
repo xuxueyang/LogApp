@@ -27,6 +27,7 @@ public class LogMenu extends JPanel {
     private JButton showLogTel;
     //点击显示文件上传按钮
     private JButton chooseUploadFile;
+    private JButton chooseDownFile;
     public LogMenu(){
         this.init();
     }
@@ -66,7 +67,10 @@ public class LogMenu extends JPanel {
 //            }
 //        });
         this.add(this.showLogTel);
-        this.chooseUploadFile = LogFactory.getChooseUploadFile(120,this.getHeight()-20);
+        this.chooseUploadFile = LogFactory.getChooseUploadFileButton(120,this.getHeight()-20);
+        this.add(chooseUploadFile);
+        this.chooseDownFile = LogFactory.getChooseDownFileButton(120,this.getHeight()-20);
+        this.add(chooseDownFile);
 
     }
     private void add(){

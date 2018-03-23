@@ -28,10 +28,10 @@ public  class Log {
 					&&logEventList.get(logEventList.size()-1).getResource()==logEvent.getResource()
 					&&logEvent.getTimestamp()-logEventList.get(logEventList.size()-1).getTimestamp()<LogStatic.Operator_Delay)){
 				logEventList.add(logEvent);
+				if(logEventList.size()>= LogStatic.NLogEventCacheSize){
+					refreshCache();
+				}
 			}
-		}
-		if(logEventList.size()>= LogStatic.NLogEventCacheSize){
-			refreshCache();
 		}
 	}
 	public static synchronized void refreshCache(){
