@@ -30,7 +30,12 @@ public class LogMenuController implements LogCtrInterface {
             //说明日期更改了(加载其他日志了)
             LogNotification.broadcast(new LogEvent(null,LogStatic.resource.global_data_save.name(),logEvent.getUuid()));
             LogJFrame.getLogJFrame().getLogMenu().hasChooseCalendar(LogStatic.GLOBAL_DATE);
-            LogNotification.broadcast(new LogEvent(LogStatic.GLOBAL_DATE.replace("-", "/"), LogStatic.resource.global_data_init.name()));
+            //TODO 设置加载文件的全路径,切换日期时加载对应日期的下的，可是==我想万一不只是加载一个呢，所以这里改为list吧？
+//            String initPath = LogStatic.REAL_PATH_DIARY + "/" + LogStatic.GLOBAL_DATE.replace("-","/");
+            LogNotification.broadcast(
+                    new LogEvent(
+                            LogStatic.GLOBAL_DATE.replace("-", "/"),
+                            LogStatic.resource.global_data_init.name()));
         }
         return new LogEvent(true,LogStatic.resource.Return.name(),logEvent.getUuid());
     }

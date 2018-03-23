@@ -28,7 +28,7 @@ public class LogGlobalController implements LogCtrInterface {
         } catch (IOException e) {
             e.printStackTrace();
             String error = LogGenerator.serialize(e);
-            Log.Loggin(error,LogStatic.Log_classify.SystemLog.name());
+            Log.Loggin(error,LogStatic.Tag.SystemLog.name());
             return new LogEvent(false,LogStatic.resource.Return.name(),logEvent.getUuid());
         }
     }
@@ -50,14 +50,26 @@ public class LogGlobalController implements LogCtrInterface {
 //        }
 //        String path = LogStatic.REAL_PATH_DIARY + "/" + logEvent.getSource().toString().replace("-","/");
         //TODO 用全局日期来（也就是回头需要把静态配置和全局信息给分开）
-        String path = LogStatic.REAL_PATH_DIARY + "/" + LogStatic.GLOBAL_DATE.replace("-","/");
+//        String path = LogStatic.REAL_PATH_DIARY + "/" + LogStatic.GLOBAL_DATE.replace("-","/");
+        List<String> pathList = new ArrayList<>();
+        for(LogStatic.Tag tag:LogStatic.Tag.values()){
+            pathList.add(LogStatic.REAL_PATH+"/"+tag.name()+"/"+LogStatic.GLOBAL_DATE.replace("-","/"));
+        }
+//        String path = logEvent.getSource().toString();
         LogJFrame.getLogJFrame().clear();
 //        LogJFrame.getLogJFrame().setTitle(logEvent.getSource().toString().replace("/","-"));
         LogJFrame.getLogJFrame().setTitle(LogStatic.GLOBAL_DATE.replace("/","-"));
 
         LogJFrame.getLogJFrame().setVisible(true);
         //加载LogEach
-        List<String> puuidList =  LogFileLoadAndSave.getLogFileLoadAndSave().loadPUuidByPath(path);
+        List<String> puuidList = new ArrayList<>();
+        for(String path:pathList){
+            List<String> tmp =  LogFileLoadAndSave.getLogFileLoadAndSave().loadPUuidByPath(path);
+            for(String str:tmp){
+                puuidList.add(str);
+            }
+        }
+//        List<String> puuidList =  LogFileLoadAndSave.getLogFileLoadAndSave().loadPUuidByPath(path);
         List<LogEach> list = new ArrayList<LogEach>();
         for(String puuid:puuidList){
             //这里查询是查询出附属文件下的全部数据，不管后缀，就算想以meta为后缀区分似乎也不可以...也就是对于LogDay的文件需要想办法单独区分。比如，直接将路径存储到LogDay中？

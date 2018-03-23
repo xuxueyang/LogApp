@@ -38,7 +38,7 @@ public class LogNotification {
             e.printStackTrace();
             String error = LogGenerator.serialize(e);
             if(logEvent.getUuid()!=null){
-                Log.Loggin(error,LogStatic.Log_classify.SystemLog.name());
+                Log.Loggin(error,LogStatic.Tag.SystemLog.name());
             }
         }
 //        return  result;

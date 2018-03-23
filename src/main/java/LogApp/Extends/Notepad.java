@@ -237,11 +237,11 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
                     bw.close();
                 }
                 catch( FileNotFoundException fe ){
-                    Log.Loggin("file not found",LogStatic.Log_classify.SystemLog.name());
+                    Log.Loggin("file not found",LogStatic.Tag.SystemLog.name());
 //                    System.exit(0);
                 }
                 catch( IOException ie){
-                    Log.Loggin("IO error",LogStatic.Log_classify.SystemLog.name());
+                    Log.Loggin("IO error",LogStatic.Tag.SystemLog.name());
 //                    System.exit(0);
                 }
 
@@ -283,11 +283,11 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
                     catch(FileNotFoundException fe_){
 //                        System.out.println("file not found");
 //                        System.exit(0);
-                        Log.Loggin("file not found",LogStatic.Log_classify.SystemLog.name());
+                        Log.Loggin("file not found",LogStatic.Tag.SystemLog.name());
                     }
                     catch( IOException ie_)
                     {
-                        Log.Loggin(" IO error",LogStatic.Log_classify.SystemLog.name());
+                        Log.Loggin(" IO error",LogStatic.Tag.SystemLog.name());
 //                        System.out.println(" IO error");
 //                        System.exit(0);
                     }
@@ -310,11 +310,11 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
                     catch(FileNotFoundException fe_){
 //                        System.out.println("file not found");
 //                        System.exit(0);
-                        Log.Loggin("file not found",LogStatic.Log_classify.SystemLog.name());
+                        Log.Loggin("file not found",LogStatic.Tag.SystemLog.name());
                     }
                     catch( IOException ie_)
                     {
-                        Log.Loggin(" IO error",LogStatic.Log_classify.SystemLog.name());
+                        Log.Loggin(" IO error",LogStatic.Tag.SystemLog.name());
 //                        System.out.println(" IO error");
 //                        System.exit(0);
                     }
@@ -350,11 +350,11 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
                 catch(FileNotFoundException fe_){
 //                        System.out.println("file not found");
 //                        System.exit(0);
-                    Log.Loggin("file not found",LogStatic.Log_classify.SystemLog.name());
+                    Log.Loggin("file not found",LogStatic.Tag.SystemLog.name());
                 }
                 catch( IOException ie_)
                 {
-                    Log.Loggin(" IO error",LogStatic.Log_classify.SystemLog.name());
+                    Log.Loggin(" IO error",LogStatic.Tag.SystemLog.name());
 //                        System.out.println(" IO error");
 //                        System.exit(0);
                 }

@@ -17,19 +17,22 @@ public class LogEvent {
     }
     private String uuid;
     private long timestamp;
+    private Object[] objects;
     public String getUuid(){
         return this.uuid;
     }
     public  LogEvent( Object source, String resource ){
-        this.source = source;
-        this.resource = resource;
-        this.uuid = LogGenerator.getUUID();
+        this(source,resource,LogGenerator.getUUID());
     }
     public  LogEvent( Object source, String resource,String uuid ){
+        this(source,resource,uuid,null);
+    }
+    public  LogEvent( Object source, String resource,String uuid,Object[] objects){
         this.source = source;
         this.resource = resource;
         this.uuid = uuid;
         this.timestamp = new Date().getTime();
+        this.objects = objects;
     }
     @Override
     public String toString() {
@@ -41,5 +44,13 @@ public class LogEvent {
 
     public long getTimestamp() {
         return timestamp;
+    }
+
+    public Object[] getObjects() {
+        return objects;
+    }
+
+    public void setObjects(Object[] objects) {
+        this.objects = objects;
     }
 }

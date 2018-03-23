@@ -14,23 +14,15 @@ public class LogStatic {
     //TODO 设置配置文件。因为分类来作为文件夹名字比较好点，否则，感觉这种全日制的路径结构，不适合以后添加对于某个工程的bug诶。还是写在日志里就和便签混淆。
     //所以对于Log_classify、classify、Type，其实都是分类，所以这些地方都做一下修改吧。相当于代码中的保留字段，不允许修改的几个基本分类标签
     public enum Tag{
+        Diary,
         SystemLog,
         OperatorLog,
-        Default,
-        Work,
-        Game,
-        Study,
-        Think,
-        Tel,
-        Day,
-        Bug,
-        TODO
     }
 
-    public enum  Log_classify{
-        SystemLog,
-        OperatorLog
-    }
+//    public enum  Log_classify{
+//        SystemLog,
+//        OperatorLog
+//    }
     public enum mark_star{
         DarkGray,
         Blue,
@@ -43,7 +35,9 @@ public class LogStatic {
         Work,
         Game,
         Study,
-        Think
+        Think,
+        Bug,
+        TODO
     }
     public enum priority {
         Default,
@@ -138,9 +132,9 @@ public class LogStatic {
 //    public static String REAL_PATH = ClassLoader.getSystemResource("").toString();
     public static String REAL_PATH = "D:/xxy/Log_Diary";//路径
     public static String REAL_PATH_NOTETREE = REAL_PATH + "/NoteTree";//树形思维树
-    public static String REAL_PATH_DIARY = REAL_PATH + "/Diary";//个人日志
-    public static String REAL_PATH_LOG = REAL_PATH + "/" + Log_classify.SystemLog.name();//系统日志
-    public static String REAL_PATH_OPERATOR = REAL_PATH + "/" + Log_classify.OperatorLog.name();//操作数据
+    public static String REAL_PATH_DIARY = REAL_PATH + "/"+Tag.Diary.name();//个人日志
+    public static String REAL_PATH_LOG = REAL_PATH + "/" + Tag.SystemLog.name();//系统日志
+    public static String REAL_PATH_OPERATOR = REAL_PATH + "/" + Tag.OperatorLog.name();//操作数据
     public static String ENCODE = Charset.defaultCharset().displayName();
     //LogEvent缓存大小
     public static int NLogEventCacheSize = 10;

@@ -44,7 +44,7 @@ public class Tary implements ActionListener,MouseListener,WindowListener,WindowS
     		tray.add(trayIcon);
     	} catch (AWTException e) {
 			String error = LogGenerator.serialize(e);
-			Log.Loggin(error,LogStatic.Log_classify.SystemLog.name());
+			Log.Loggin(error,LogStatic.Tag.SystemLog.name());
     	}
     }
    }

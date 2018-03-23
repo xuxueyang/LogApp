@@ -5,8 +5,10 @@ import LogApp.LogStatic;
 /**
  * Created by 徐雪阳 on 2017/12/5.
  */
-public class LogEach  extends  LogBase{
-
+//implements TagInterface
+    //TODO 现在还有个问题==在LogDetail里的分类是对于日志的，也就是说，其实现在做的分类应该是在这个层级之上的分类
+public class LogEach  extends  LogBase {
+//    private LogS  tag;
     private boolean isOver = false;
 
     public  boolean getIsOver(){
@@ -58,4 +60,20 @@ public class LogEach  extends  LogBase{
     public void createLogDetail() {
         this.logDetail = new LogDetail(this.uuid);
     }
+
+//    public String getTag() {
+//        if(tag==null||"".equals(tag)){
+//            this.tag = LogStatic.Tag.Diary.name();
+//        }
+//        return tag;
+//    }
+//    //?入口？怎么修改Tag，还是在Classify中，支持修改LogEach的标签。
+//    public void setTag(String tag) {
+//        this.tag = tag;
+//    }
+
+//    @Override
+//    public String getBelongTag() {
+//        return this.logDetail.getClassify().name();
+//    }
 }

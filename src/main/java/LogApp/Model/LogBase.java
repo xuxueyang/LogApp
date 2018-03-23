@@ -11,6 +11,7 @@ import java.util.Date;
 /**
  * Created by 徐雪阳 on 2017/12/5.
  */
+//implements  TagInterface
 public  class LogBase {
     /**
      * 默认脏数据，需要写入
@@ -18,7 +19,7 @@ public  class LogBase {
     protected boolean isDiary = false;
     public boolean isExist = true;//采用逻辑删除
     public boolean isEncode = false;//默认没有加密
-
+    private LogStatic.Tag tag;
     protected String uuid;
     protected Long createDate;
     protected Long updateDate;
@@ -123,7 +124,10 @@ public  class LogBase {
         }else{
             path = this.belongDateStr.replace("-","/");
         }
-        path = LogStatic.REAL_PATH_DIARY + "/" + path;//回头和“Log”区别
+        if(this.tag==null||"".equals(this.tag.name())){
+            this.tag = LogStatic.Tag.Diary;
+        }
+        path = LogStatic.REAL_PATH + "/"+ this.tag.name() + "/" + path;//回头和“Log”区别
         return path;
     }
     public String getFilePath(){
@@ -135,4 +139,9 @@ public  class LogBase {
     public String toString() {
         return LogGenerator.serialize(this);
     }
+
+//    @Override
+//    public String getBelongTag(){
+//        return this.classify.name();
+//    }
 }

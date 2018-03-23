@@ -100,6 +100,7 @@ public  class LogJFrame extends JFrame implements ActionListener {
         this.ReShow();
     }
     public boolean canAddEachPanel(){
+        //TODO 修改最大支持的次数，只是自动隐藏第一个
         return this.numOverTask+this.numNoOverTask < this.maxTask||this.numOverTask>this.maxOverTask;
     }
     public Rectangle getRect(){

@@ -37,7 +37,7 @@ public  class Log {
 	public static synchronized void refreshCache(){
 		if(logEventList.size()<=0)
 			return;
-		Log.Loggin(Log.changeArrayToString(logEventList), LogStatic.Log_classify.OperatorLog.name());
+		Log.Loggin(Log.changeArrayToString(logEventList), LogStatic.Tag.OperatorLog.name());
 		logEventList.clear();
 	}
 //	private static String path = LogStatic.REAL_PATH_LOG;
@@ -59,7 +59,7 @@ public  class Log {
 	 */
 	public static String Loggin(String log,String classify)
 	{
-		if(!LogValidators.isInRange(classify, LogStatic.Log_classify.SystemLog.name(),LogStatic.Log_classify.OperatorLog.name())){
+		if(!LogValidators.isInRange(classify, LogStatic.Tag.SystemLog.name(),LogStatic.Tag.OperatorLog.name())){
 			return "";
 		}
 		//每次启动的时候，都会生成一个日志文件————名字为日期

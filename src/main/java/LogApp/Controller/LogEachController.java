@@ -52,7 +52,7 @@ public class LogEachController implements LogCtrInterface {
         } catch (IOException e) {
             e.printStackTrace();
             String error = LogGenerator.serialize(e);
-            Log.Loggin(error, LogStatic.Log_classify.SystemLog.name());
+            Log.Loggin(error, LogStatic.Tag.SystemLog.name());
         }
         return new LogEvent(true,LogStatic.resource.Return.name(),logEvent.getUuid());
     }

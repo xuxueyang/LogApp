@@ -74,7 +74,7 @@ public class LogMaxMainJFrame extends JFrame{
         }
         if(this.invokeFun==null)
         {
-            Log.Loggin("未找到该功能面板类:"+functionPanel.name(),LogStatic.Log_classify.SystemLog.name());
+            Log.Loggin("未找到该功能面板类:"+functionPanel.name(),LogStatic.Tag.SystemLog.name());
             return;
         }
         try {
