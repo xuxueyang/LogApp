@@ -129,7 +129,9 @@ public class LinuxSFTP {
             return false;
         }
     }
-
+    public static void downloadNormal( String downloadFile,String saveFile, ChannelSftp sftp){
+        LinuxSFTP.download(uploadNormalFileServerPath,downloadFile,saveFile,sftp);
+    }
     public static void download( String downloadFile,String saveFile, ChannelSftp sftp){
         LinuxSFTP.download(uploadServerPath,downloadFile,saveFile,sftp);
     }

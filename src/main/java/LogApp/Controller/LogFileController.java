@@ -48,8 +48,12 @@ public class LogFileController implements LogCtrInterface{
     }
     private LogEvent file_file_down(LogEvent logEvent){
         //下载文件——从Linuxroot文件夹下读取文件列表，树状加载显示文件
-
-
+        String choosePath = chooseDownFilePath();
+        //TODO root文件夹下的数据，选择一个数据文件下载
+        ChannelSftp channelSftp = LinuxSFTP.getConnect();
+        //java.io.FileNotFoundException: C:\Users\Administrator\Desktop 有问题，bug是因为没有添加文件名
+        String fileName = "Log_Diary_20180323.rar";
+        LinuxSFTP.downloadNormal(fileName,choosePath+"\\"+"Log_Diary_20180323.rar",channelSftp);
         return new LogEvent("下载了文件", LogStatic.resource.Return.name(),logEvent.getUuid());
     }
     @Override
@@ -76,6 +80,35 @@ public class LogFileController implements LogCtrInterface{
             filePath=chooser.getSelectedFile().getPath();
         }
         Object[] options = { "上传文件", "取消" };
+        int results= JOptionPane.showOptionDialog(null, "是否保存?", "Warning",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,null, options, options[0]);
+        if(results==JOptionPane.OK_OPTION)
+        {
+            return filePath;
+        }
+//        if(results==JOptionPane.NO_OPTION )
+//        {
+//            return "";
+//        }
+        return "";
+    }
+
+    /**
+     *
+     * @return 选择下载文件的本地路径
+     */
+    public String chooseDownFilePath(){
+        JFileChooser chooser=new JFileChooser();
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int result=chooser.showOpenDialog(null);
+        String fname=chooser.getName(chooser.getSelectedFile());
+//        System.out.println("fname--->"+fname);
+        String filePath="";
+        if(result==JFileChooser.APPROVE_OPTION)
+        {
+            filePath=chooser.getSelectedFile().getPath();
+        }
+        Object[] options = { "下载文件", "取消" };
         int results= JOptionPane.showOptionDialog(null, "是否保存?", "Warning",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,null, options, options[0]);
         if(results==JOptionPane.OK_OPTION)
