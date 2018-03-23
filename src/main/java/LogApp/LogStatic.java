@@ -10,6 +10,23 @@ import java.nio.charset.Charset;
  */
 
 public class LogStatic {
+    //TODO 将之作为分类的字段吧。
+    //TODO 设置配置文件。因为分类来作为文件夹名字比较好点，否则，感觉这种全日制的路径结构，不适合以后添加对于某个工程的bug诶。还是写在日志里就和便签混淆。
+    //所以对于Log_classify、classify、Type，其实都是分类，所以这些地方都做一下修改吧。相当于代码中的保留字段，不允许修改的几个基本分类标签
+    public enum Tag{
+        SystemLog,
+        OperatorLog,
+        Default,
+        Work,
+        Game,
+        Study,
+        Think,
+        Tel,
+        Day,
+        Bug,
+        TODO
+    }
+
     public enum  Log_classify{
         SystemLog,
         OperatorLog

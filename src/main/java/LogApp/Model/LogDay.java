@@ -21,7 +21,7 @@ public class LogDay extends LogBase {
         this.title = LogGenerator.pattern_date(LogGenerator.changeDetailPatternToDate(this.createDate));
     }
     // 默认是空的，表示单纯的日志，否则根据这个字段，表示每日日志的不同类型：比如技术的tel
-    public String type = null;
+    public String type = null;//鉴于其他地方也需要标签，转入到LogBase中___现在结构上暂时不支持诶___在LogBase中单独加一层标签吧
 //    @Override
 //    public String getFilePath(){
 //        String path = getFolderPath() + "/" + uuid + ".txt";
