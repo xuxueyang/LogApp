@@ -94,8 +94,8 @@ public class LogFileController implements LogCtrInterface{
         if(file.exists()&&file.isFile()){
             size+=file.length();
         }else if(file.exists()&&file.isDirectory()){
-            for(String path:file.list()){
-                size+=checkFileSize(path);
+            for(File childrenFile:file.listFiles()){
+                size+=checkFileSize(childrenFile.getAbsolutePath());
             }
         }
         return size;
