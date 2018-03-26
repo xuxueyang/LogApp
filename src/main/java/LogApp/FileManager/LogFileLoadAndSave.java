@@ -68,7 +68,9 @@ public class LogFileLoadAndSave {
             String m;
             BufferedReader bufferedReader = null;
             try {
-                bufferedReader = new BufferedReader(new FileReader(file));
+//                new FileReader(file)   ¡ª¡ª¡ª¡ªÒòÎªInputStreamReader StreamDecoder.forInputStreamReader Charset.defaultCharset().name();
+                InputStreamReader reader = new InputStreamReader(new FileInputStream(file),LogStatic.ENCODE);
+                bufferedReader = new BufferedReader(reader);
                 while ((m = bufferedReader.readLine()) != null) {
                     json.append(m);
                 }

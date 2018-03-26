@@ -8,13 +8,15 @@ import LogApp.Model.LogEach;
 import LogApp.Tool.LogEvent;
 import LogApp.Tool.LogGenerator;
 import LogApp.Tool.LogNotification;
-import com.trolltech.qt.core.QEvent;
-import com.trolltech.qt.core.Qt;
-import com.trolltech.qt.gui.*;
+
+//import com.trolltech.qt.gui.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -127,7 +129,7 @@ public class LogDetailSingleQT extends JFrame {
         if(logDetailSingleQT == null){
             //QWidget: Must construct a QApplication before a QPaintDevice
             String[] args = {};
-            QApplication.initialize(args);
+//            QApplication.initialize(args);
             logDetailSingleQT = new LogDetailSingleQT();
             logDetailSingleQT.init();
             logDetailSingleQT.setSize(300,400);
@@ -198,6 +200,18 @@ public class LogDetailSingleQT extends JFrame {
     public  void hideDetail(){
         init();
         this.setVisible(false);
+    }
+    public static void main(String[] args) {
+        System.out.println("Default Charset=" + Charset.defaultCharset());
+        System.out.println("file.encoding=" + System.getProperty("file.encoding"));
+        System.out.println("Default Charset=" + Charset.defaultCharset());
+        System.out.println("Default Charset in Use=" + getDefaultCharSet());
+    }
+
+    private static String getDefaultCharSet() {
+        OutputStreamWriter writer = new OutputStreamWriter(new ByteArrayOutputStream());
+        String enc = writer.getEncoding();
+        return enc;
     }
 }
 //public class LogDetailSingleQT extends QFrame {

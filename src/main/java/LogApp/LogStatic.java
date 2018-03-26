@@ -136,7 +136,11 @@ public class LogStatic {
     public static String REAL_PATH_DIARY = REAL_PATH + "/"+Tag.Diary.name();//个人日志
     public static String REAL_PATH_LOG = REAL_PATH + "/" + Tag.SystemLog.name();//系统日志
     public static String REAL_PATH_OPERATOR = REAL_PATH + "/" + Tag.OperatorLog.name();//操作数据
-    public static String ENCODE = Charset.defaultCharset().displayName();
+//    public static String ENCODE = Charset.defaultCharset().displayName();
+    public static String ENCODE = "GBK";
+    {
+
+    }
     //LogEvent缓存大小
     public static int NLogEventCacheSize = 10;
     //LogDate
