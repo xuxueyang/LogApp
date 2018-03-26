@@ -16,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Model/LogBase.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Model/LogEach.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Tool/LogEvent.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Tool/Tary.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogEachPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogJFrame.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogMaxMainJFrame.java" charset="GBK" />
