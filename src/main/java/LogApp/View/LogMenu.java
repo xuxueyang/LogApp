@@ -74,22 +74,23 @@ public class LogMenu extends JPanel {
 
     }
     private void add(){
-        //因为还没做滚动，先判断能不能创建
-        LogEvent logEvent = new LogEvent(this,LogStatic.resource.menu_can_add.name());
-//        boolean canAdd = LogNotification.broadcast(logEvent);
-        ArrayList<LogEvent> canAddList = LogNotification.broadcast(logEvent);
-        if(canAddList.size()>0){
-            LogEvent logEvent1 = canAddList.get(0);
-            if((boolean)logEvent1.getSource()){
-                logEvent = new LogEvent(this,LogStatic.resource.menu_add.name());
-                LogNotification.broadcast(logEvent);
-            }
-//            if(canAdd){
+//        //因为还没做滚动，先判断能不能创建
+//        LogEvent logEvent = new LogEvent(this,LogStatic.resource.menu_can_add.name());
+////        boolean canAdd = LogNotification.broadcast(logEvent);
+//        ArrayList<LogEvent> canAddList = LogNotification.broadcast(logEvent);
+//        if(canAddList.size()>0){
+//            LogEvent logEvent1 = canAddList.get(0);
+//            if((boolean)logEvent1.getSource()){
 //                logEvent = new LogEvent(this,LogStatic.resource.menu_add.name());
 //                LogNotification.broadcast(logEvent);
 //            }
-        }
-
+////            if(canAdd){
+////                logEvent = new LogEvent(this,LogStatic.resource.menu_add.name());
+////                LogNotification.broadcast(logEvent);
+////            }
+//        }
+        LogEvent logEvent = new LogEvent(this,LogStatic.resource.menu_add.name());
+        LogNotification.broadcast(logEvent);
     }
     private void chooseCalendarClick(){
         // 定义日历控件面板类

@@ -118,7 +118,11 @@ public class LogOverPanel extends JPanel {
         }
         Component[] components = this.getComponents();
         if(count>=showCount){
-            for(int i=count-1;i>=showCount;i--){
+            // 优先移除第一个
+//            for(int i=count-1;i>=showCount;i--){
+//                this.remove(components[i]);
+//            }
+            for(int i=1;i<=count-showCount;i++){
                 this.remove(components[i]);
             }
         }else{

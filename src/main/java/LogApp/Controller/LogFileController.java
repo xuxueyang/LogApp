@@ -52,8 +52,8 @@ public class LogFileController implements LogCtrInterface{
         //TODO root文件夹下的数据，选择一个数据文件下载
         ChannelSftp channelSftp = LinuxSFTP.getConnect();
         //java.io.FileNotFoundException: C:\Users\Administrator\Desktop 有问题，bug是因为没有添加文件名
-        String fileName = "Log_Diary_20180323.rar";
-        LinuxSFTP.downloadNormal(fileName,choosePath+"\\"+"Log_Diary_20180323.rar",channelSftp);
+        String fileName = "Log_Diary.rar";
+        LinuxSFTP.downloadNormal(fileName,choosePath+"\\"+"Log_Diary.rar",channelSftp);
         return new LogEvent("下载了文件", LogStatic.resource.Return.name(),logEvent.getUuid());
     }
     @Override

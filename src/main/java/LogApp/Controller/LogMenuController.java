@@ -10,9 +10,9 @@ import LogApp.View.LogJFrame;
 import LogApp.View.LogMaxMainJFrame;
 
 public class LogMenuController implements LogCtrInterface {
-    private  LogEvent menu_can_add(LogEvent logEvent){
-        return new LogEvent(LogJFrame.getLogJFrame().canAddEachPanel(),LogStatic.resource.Return.name(),logEvent.getUuid());
-    }
+//    private  LogEvent menu_can_add(LogEvent logEvent){
+//        return new LogEvent(LogJFrame.getLogJFrame().canAddEachPanel(),LogStatic.resource.Return.name(),logEvent.getUuid());
+//    }
     private  LogEvent menu_add(LogEvent logEvent){
         LogEach logEach =  LogFileManager.getLogFileManager().createEach(logEvent.getUuid());
         LogJFrame.getLogJFrame().addEachPanel(LogFactory.createLogEachPanel(logEvent.getUuid(),logEach.getBelongDateStr()));
@@ -44,8 +44,8 @@ public class LogMenuController implements LogCtrInterface {
         switch (logEvent.getResource()){
             case "menu_add":
                 return this.menu_add(logEvent);
-            case "menu_can_add":
-                return this.menu_can_add(logEvent);
+//            case "menu_can_add":
+//                return this.menu_can_add(logEvent);
             case "menu_chooseCalender":
                 return this.menu_chooseCalender(logEvent);
             default:

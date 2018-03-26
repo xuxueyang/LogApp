@@ -115,7 +115,7 @@ public class LogStatic {
         mainFun_showAllNoOver,
         mainFun_noteTree,
         menu_add,
-        menu_can_add,
+//        menu_can_add,
         menu_chooseCalender,
         global_data_save,//UUID为空，不做记录
         global_data_init,
