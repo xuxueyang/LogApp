@@ -234,16 +234,20 @@ public  class LogJFrame extends JFrame implements ActionListener {
         rect = new Rectangle(0, 0, frameWidth, frameHeight);
         // 获取鼠标在窗体的位置
         point =getMousePosition();
+        //当吸附的时候自动置顶
         if ((frameTop > -5 && frameTop < 5) && (frameLeft > -5 && frameLeft < 5) && !(isPtInRect(rect, point))) {
             // 当窗体的上边框与屏幕的顶端的距离小于5时 ，
             // 并且鼠标不再窗体上将窗体隐藏到屏幕的顶端
             setLocation(frameLeft - frameWidth + 1, 5);
+            setAlwaysOnTop(true);
         } else if ((frameTop < 0) && isPtInRect(rect, point)) {
             setLocation(frameLeft, 0);// 窗口隐藏了，鼠标指到他，就显示出来；
+            setAlwaysOnTop(false);
         } else if (frameTop > -5 && frameTop < 5 && !(isPtInRect(rect, point))) {
             // 当窗体的上边框与屏幕的顶端的距离小于5时 ，
             // 并且鼠标不再窗体上将窗体隐藏到屏幕的顶端
             setLocation(frameLeft, 5 - frameHeight);
+            setAlwaysOnTop(true);
         }
         LogStatic.x = getLocation().x;
         LogStatic.y = getLocation().y;

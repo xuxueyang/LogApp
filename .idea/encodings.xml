@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Controller/LogCtrInterface.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Controller/LogDayController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Controller/LogDetailQTController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Controller/LogFileController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Controller/LogMenuController.java" charset="GBK" />
@@ -17,6 +18,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/Tool/LogEvent.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogEachPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogJFrame.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogMaxMainJFrame.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogMenu.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogOverPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogTextArea.java" charset="GBK" />

@@ -23,6 +23,9 @@ public class LogFileController implements LogCtrInterface{
         //打包本地文件，上传到服务器。
         //跳出文件选择框
         String choosePath = chooseFileOrDir();
+        if("".equals(choosePath)){
+            return new LogEvent(null,LogStatic.resource.Return.name(),null);
+        }
         Long size = checkFileSize(choosePath);
         if(size==0)
             return new LogEvent("上传文件大小为0", LogStatic.resource.Return.name(),logEvent.getUuid());
@@ -49,6 +52,9 @@ public class LogFileController implements LogCtrInterface{
     private LogEvent file_file_down(LogEvent logEvent){
         //下载文件——从Linuxroot文件夹下读取文件列表，树状加载显示文件
         String choosePath = chooseDownFilePath();
+        if("".equals(choosePath)){
+            return new LogEvent(null,LogStatic.resource.Return.name(),null);
+        }
         //TODO root文件夹下的数据，选择一个数据文件下载
         ChannelSftp channelSftp = LinuxSFTP.getConnect();
         //java.io.FileNotFoundException: C:\Users\Administrator\Desktop 有问题，bug是因为没有添加文件名
@@ -79,6 +85,9 @@ public class LogFileController implements LogCtrInterface{
         {
             filePath=chooser.getSelectedFile().getPath();
         }
+        if(fname==null||"".equals(fname)){
+            return "";
+        }
         Object[] options = { "上传文件", "取消" };
         int results= JOptionPane.showOptionDialog(null, "是否保存?", "Warning",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,null, options, options[0]);
@@ -107,6 +116,9 @@ public class LogFileController implements LogCtrInterface{
         if(result==JFileChooser.APPROVE_OPTION)
         {
             filePath=chooser.getSelectedFile().getPath();
+        }
+        if(fname==null||"".equals(fname)){
+            return "";
         }
         Object[] options = { "下载文件", "取消" };
         int results= JOptionPane.showOptionDialog(null, "是否保存?", "Warning",
