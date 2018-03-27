@@ -66,7 +66,8 @@ public class showAllOver extends InvokeFun{
         this.add(classifyJComboBox);
         this.add(priorityJComboBox);
         this.add(markJComboBox);
-        this.add(logTwoStatusPanel);
+        JScrollPane jScrollPane = new JScrollPane(logTwoStatusPanel);
+        this.add(jScrollPane);
         // 添加布局
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.NONE;
@@ -89,7 +90,7 @@ public class showAllOver extends InvokeFun{
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.weighty = 2;
-        gridBagLayout.setConstraints(logTwoStatusPanel,gridBagConstraints);
+        gridBagLayout.setConstraints(jScrollPane,gridBagConstraints);
     }
     @Override
     public void Invoke(String methodName, Object[] params) throws IllegalAccessException,InvocationTargetException {
@@ -117,7 +118,7 @@ public class showAllOver extends InvokeFun{
         if(methodName==null||"".equals(methodName))
             return false;
         switch (methodName){
-            case "showAllNoOver":
+            case "showAllOver":
                 return true;
             default:
                 return false;
@@ -134,7 +135,7 @@ public class showAllOver extends InvokeFun{
      * 因为数据在maxJFrame和JFrame同时显示，所以记得delete的时候要同时刷新。（还好细节是单例，阔以保持数据同步）
      * @param arrayList
      */
-    public void showAllNoOver(ArrayList<LogEachPanel> arrayList){
+    public void showAllOver(ArrayList<LogEachPanel> arrayList){
         if(logTwoStatusPanel ==null)
             return;
         for(LogEachPanel panel:arrayList){

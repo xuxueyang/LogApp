@@ -67,7 +67,8 @@ public class showAllNoOver extends InvokeFun{
         this.add(classifyJComboBox);
         this.add(priorityJComboBox);
         this.add(markJComboBox);
-        this.add(logTwoStatusPanel);
+        JScrollPane jScrollPane = new JScrollPane(logTwoStatusPanel);
+        this.add(jScrollPane);
         // Ìí¼Ó²¼¾Ö
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.NONE;
@@ -90,7 +91,7 @@ public class showAllNoOver extends InvokeFun{
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.weighty = 2;
-        gridBagLayout.setConstraints(logTwoStatusPanel,gridBagConstraints);
+        gridBagLayout.setConstraints(jScrollPane,gridBagConstraints);
     }
     @Override
     public void Invoke(String methodName, Object[] params) throws IllegalAccessException,InvocationTargetException {
