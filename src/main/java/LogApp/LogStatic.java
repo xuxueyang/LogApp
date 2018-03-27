@@ -38,7 +38,8 @@ public class LogStatic {
         Study,
         Think,
         Bug,
-        TODO
+        TODO,
+        Read
     }
     public enum priority {
         Default,
