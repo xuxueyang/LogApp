@@ -215,11 +215,12 @@ public  class LogJFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(!isDraging&& this.isVisible()){
-            if(getLocation().x!=LogStatic.x||getLocation().y!=LogStatic.y){
-                Point point = new Point(getLocation().x-LogStatic.x,getLocation().y-LogStatic.y);
-                LogNotification.broadcast(new LogEvent(point,LogStatic.resource.detail_move.name(),null));
-            }
+            //这里的顺序需要吸附在前，否则会Detail会因为继续计算偏移而上移。———而且得好好处理，不然因为传入导致main隐藏，Detail一起隐藏
             autoAdsorb();
+//            if(getLocation().x!=LogStatic.x||getLocation().y!=LogStatic.y){
+//                Point point = new Point(getLocation().x-LogStatic.x,getLocation().y-LogStatic.y);
+//                LogNotification.broadcast(new LogEvent(point,LogStatic.resource.detail_move.name(),null));
+//            }
         }
     }
     private  void autoAdsorb(){
@@ -248,6 +249,12 @@ public  class LogJFrame extends JFrame implements ActionListener {
             // 并且鼠标不再窗体上将窗体隐藏到屏幕的顶端
             setLocation(frameLeft, 5 - frameHeight);
             setAlwaysOnTop(true);
+        }else{
+            //其他情况就是正常拖拽，不会影响
+            if(getLocation().x!=LogStatic.x||getLocation().y!=LogStatic.y){
+                Point point = new Point(getLocation().x-LogStatic.x,getLocation().y-LogStatic.y);
+                LogNotification.broadcast(new LogEvent(point,LogStatic.resource.detail_move.name(),null));
+            }
         }
         LogStatic.x = getLocation().x;
         LogStatic.y = getLocation().y;

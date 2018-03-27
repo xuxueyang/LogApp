@@ -35,6 +35,7 @@ public class LogDetailSingleQT extends JFrame {
     private LogDetailSingleQT(){
         super();
         this.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        this.setAlwaysOnTop(true);
         GridBagLayout gridBagLayout = new GridBagLayout();
         this.setLayout(gridBagLayout);
         //分类的下拉，优先级的下拉，标记的下拉

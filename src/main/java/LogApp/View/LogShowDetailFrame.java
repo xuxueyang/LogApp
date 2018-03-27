@@ -18,6 +18,7 @@ public class LogShowDetailFrame extends JFrame  {
             logShowDetailFrame = new LogShowDetailFrame();
             logShowDetailFrame.setSize(LogStatic.detailFrameWidth,LogStatic.detailFrameHeight);
             logShowDetailFrame.setUndecorated(false);//不显示边框，自定义按键
+            logShowDetailFrame.setAlwaysOnTop(true);
             logShowDetailPanel = new LogShowDetailPanel();
             logShowDetailFrame.add(logShowDetailPanel);
         }
