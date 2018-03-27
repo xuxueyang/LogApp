@@ -37,7 +37,12 @@ public class LogFileLoadAndSave {
 //            return  null;
 //        }
         //因为没有路径，就采取遍历循环当前目录找数据文件了
-        String puuid = LogFileLoadAndSave.searchFileByName(path,uuid);
+        String puuid = "";
+        if(!LogStatic.isUseLocalDataBase){
+            puuid =  LogFileLoadAndSave.searchFileByName(path,uuid);
+        }else{
+            puuid=uuid;
+        }
         if(puuid=="")
             return null;
         else {
@@ -52,11 +57,23 @@ public class LogFileLoadAndSave {
      * @return
      */
     public  <T> T load(String PUuid, Class<T> T){
-        String json = loadJsonByPUUID(PUuid);
-        if(!"".equals(json)){
-            //TODO 添加解密功能,反射查看有没有解密的字段，有的话，对其中的文本解密。
-            //TODO gson解析日期，如果含有Mar这种，会解析数字出错--
-            return LogGenerator.unserialize(json,T);
+        String json = "";
+        if(!LogStatic.isUseLocalDataBase){
+            json = loadJsonByPUUID(PUuid);
+            if(!"".equals(json)){
+                //TODO 添加解密功能,反射查看有没有解密的字段，有的话，对其中的文本解密。
+                // gson解析日期，如果含有Mar这种，会解析数字出错--
+                return LogGenerator.unserialize(json,T);
+            }
+        }else {
+            //从数据库里读取
+            //TODO 自己写方法来实例化model吧。
+            //先得到uuid
+            String[] strs = PUuid.split("\\\\");
+            String uuid = strs[strs.length-1];
+            //避免文件的后缀
+            uuid = uuid.split(".")[0];
+            //通过uuid+T的name加载数据
         }
         return  null;
     }
@@ -91,20 +108,38 @@ public class LogFileLoadAndSave {
      */
     public List<String> loadPUuidByPath(String path){
         List<String> list = new ArrayList<String>();
-        File file = new File(path);
-        if(file.isDirectory()){
-            for(File tmp:file.listFiles()){
-                List<String> tmpList = loadPUuidByPath(tmp.getAbsolutePath());
-                for(String  str:tmpList){
-                    list.add(str);
+        if(!LogStatic.isUseLocalDataBase){
+            File file = new File(path);
+            if(file.isDirectory()){
+                for(File tmp:file.listFiles()){
+                    List<String> tmpList = loadPUuidByPath(tmp.getAbsolutePath());
+                    for(String  str:tmpList){
+                        list.add(str);
+                    }
+                }
+            }else{
+                //  强制规定uuid的是不含-，以区别是不是LogEach？或者利用LogBase的classify？
+//            if(!file.getName().contains("-"))
+                list.add(file.getAbsolutePath());
+            }
+            return list;
+        }else{
+            String[] tags = path.split("\\\\");
+            String tag = tags[tags.length-1];
+            boolean contain = false;
+            for(LogStatic.Tag tmp:LogStatic.Tag.values()){
+                if(tmp.name().equals(tag)){
+                    contain = true;
+                    break;
                 }
             }
-        }else{
-            //  强制规定uuid的是不含-，以区别是不是LogEach？或者利用LogBase的classify？
-//            if(!file.getName().contains("-"))
-            list.add(file.getAbsolutePath());
+            if(!contain){
+                //加载全部的uuid
+            }
+            //数据库加载uuid
+            return list;
         }
-        return list;
+
     }
 
 
@@ -113,27 +148,39 @@ public class LogFileLoadAndSave {
      * @param logBase
      */
     public void save(LogBase logBase) throws IOException {
-
-        File file = new File(logBase.getFolderPath());
-        if(!file.exists()){
-            file.mkdirs();
+        if(!LogStatic.isUseLocalDataBase){
+            File file = new File(logBase.getFolderPath());
+            if(!file.exists()){
+                file.mkdirs();
+            }
+            file = new File(logBase.getFilePath());
+            FileOutputStream o=new FileOutputStream(file,false);
+            //TODO 加密
+            o.write(logBase.toString().getBytes(LogStatic.ENCODE));
+            o.close();
+        }else {
+            //因为==我都是采用向上转型的方式存储的，倒是咳咳==就很绝望了这里，没办法根据类型判断吗？
+            String className = logBase.getClass().getName();
+            //TODO 需要支持数据怎么存储映射到数据库诶。
         }
-        file = new File(logBase.getFilePath());
-        FileOutputStream o=new FileOutputStream(file,false);
-        //TODO 加密
-        o.write(logBase.toString().getBytes(LogStatic.ENCODE));
-        o.close();
     }
     public void save(NoteTreeBase noteTreeBase) throws IOException {
-        File file = new File(noteTreeBase.getFolderPath());
-        if(!file.exists()){
-            file.mkdirs();
+        if(!LogStatic.isUseLocalDataBase){
+            File file = new File(noteTreeBase.getFolderPath());
+            if(!file.exists()){
+                file.mkdirs();
+            }
+            file = new File(noteTreeBase.getFilePath());
+            FileOutputStream o=new FileOutputStream(file,false);
+            // TODO 加密
+            o.write(noteTreeBase.toString().getBytes(LogStatic.ENCODE));
+            o.close();
+        }else{
+            //因为==我都是采用向上转型的方式存储的，倒是咳咳==就很绝望了这里，没办法根据类型判断吗？
+            String className = noteTreeBase.getClass().getName();
+            //TODO 需要支持数据怎么存储映射到数据库诶。
         }
-        file = new File(noteTreeBase.getFilePath());
-        FileOutputStream o=new FileOutputStream(file,false);
-        // TODO 加密
-        o.write(noteTreeBase.toString().getBytes(LogStatic.ENCODE));
-        o.close();
+
     }
 //    public void save(LogEach logEach) throws IOException{
 //        //这里可以用xml格式的存储，也可以使用json，json比较简单，而xml的话，有层次结构。emmmm每条记录用json格式存储，而总文件meta数据，用xml吧。

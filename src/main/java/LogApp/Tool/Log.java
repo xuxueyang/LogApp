@@ -1,7 +1,9 @@
 package LogApp.Tool;
 
 import LogApp.LogStatic;
+import org.omg.CORBA.Object;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -32,6 +34,14 @@ public  class Log {
 					refreshCache();
 				}
 			}
+		}
+	}
+	private static void ShowDialog(String title,String message,Object[] options){
+		int results= JOptionPane.showOptionDialog(null, message, title,
+				JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,null, options, options[0]);
+		if(results==JOptionPane.OK_OPTION)
+		{
+			return;
 		}
 	}
 	public static synchronized void refreshCache(){

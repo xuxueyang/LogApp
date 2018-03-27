@@ -17,6 +17,7 @@ public class LogStatic {
         Diary,
         SystemLog,
         OperatorLog,
+        NoteTree,
     }
 
 //    public enum  Log_classify{
@@ -132,7 +133,7 @@ public class LogStatic {
     //绝对路径
 //    public static String REAL_PATH = ClassLoader.getSystemResource("").toString();
     public static String REAL_PATH = "D:/xxy/Log_Diary";//路径
-    public static String REAL_PATH_NOTETREE = REAL_PATH + "/NoteTree";//树形思维树
+    public static String REAL_PATH_NOTETREE = REAL_PATH + "/"+Tag.NoteTree.name();//树形思维树
     public static String REAL_PATH_DIARY = REAL_PATH + "/"+Tag.Diary.name();//个人日志
     public static String REAL_PATH_LOG = REAL_PATH + "/" + Tag.SystemLog.name();//系统日志
     public static String REAL_PATH_OPERATOR = REAL_PATH + "/" + Tag.OperatorLog.name();//操作数据
@@ -141,6 +142,8 @@ public class LogStatic {
     {
 
     }
+    //是否用数据库，还是从文件读取
+    public static boolean isUseLocalDataBase = false;
     //LogEvent缓存大小
     public static int NLogEventCacheSize = 10;
     //LogDate
