@@ -1,7 +1,6 @@
 package LogApp.View;
 
 import LogApp.Tool.LogEvent;
-import LogApp.Tool.LogGenerator;
 import LogApp.LogFactory;
 import LogApp.LogStatic;
 import LogApp.Tool.LogNotification;
@@ -9,7 +8,6 @@ import LogApp.Tool.LogNotification;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -53,8 +51,8 @@ public  class LogJFrame extends JFrame implements ActionListener {
         return logJFrame;
     }
     private LogMenu logMenu;
-    private LogOverPanel noOverPanel;
-    private LogOverPanel isOverPanel;
+    private LogTwoStatusPanel noOverPanel;
+    private LogTwoStatusPanel isOverPanel;
     private HashMap<String,LogEachPanel> logEachPanelHashMap = new HashMap<String,LogEachPanel>();
     private LogJFrame(){
         this.initData();
@@ -278,10 +276,10 @@ public  class LogJFrame extends JFrame implements ActionListener {
         }
         return false;
     }
-    public LogOverPanel getNoOverPanel(){
+    public LogTwoStatusPanel getNoOverPanel(){
         return this.noOverPanel;
     }
-    public LogOverPanel getIsOverPanel(){
+    public LogTwoStatusPanel getIsOverPanel(){
         return this.isOverPanel;
     }
     public void clear(){

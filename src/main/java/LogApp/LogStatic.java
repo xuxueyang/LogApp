@@ -71,6 +71,7 @@ public class LogStatic {
      */
     public enum FunctionPanel{
         showAllNoOver,
+        showAllOver,
         noteTree,
     }
     public enum  resource_prefix{

@@ -1,29 +1,24 @@
 package LogApp.View;
 
-import LogApp.LogFactory;
 import LogApp.LogFileManager;
 import LogApp.LogStatic;
 import LogApp.Model.LogEach;
-import LogApp.Tool.Log;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
 
 /**
  * Created by –Ï—©—Ù on 2017/12/6.
  */
-public class LogOverPanel extends JPanel {
+public class LogTwoStatusPanel extends JPanel {
     private JPanel contentPanel;
     private JButton jButton;
 //    private JScrollPane jScrollPane;
-    public  LogOverPanel(){
+    public LogTwoStatusPanel(){
         this(null);
     }
-    public LogOverPanel(JButton jButton){
+    public LogTwoStatusPanel(JButton jButton){
         if(jButton !=null){
             this.jButton = jButton;
             this.add(this.jButton);

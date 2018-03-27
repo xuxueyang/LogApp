@@ -5,7 +5,6 @@ import LogApp.LogStatic;
 import LogApp.Tool.Log;
 import LogApp.View.MaxFunctionPanel.InvokeFun;
 import LogApp.View.MaxFunctionPanel.LogFactory_MaxFun;
-import LogApp.View.MaxFunctionPanel.showAllNoOver;
 
 import javax.swing.*;
 import java.awt.*;

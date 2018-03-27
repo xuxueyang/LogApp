@@ -1,11 +1,8 @@
 package LogApp.View.MaxFunctionPanel;
 
-import LogApp.LogFactory;
 import LogApp.LogStatic;
 import LogApp.Tool.LogEvent;
 import LogApp.Tool.LogNotification;
-import LogApp.View.LogOverPanel;
-import LogApp.View.MaxFunctionPanel.InvokeFun;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,6 +17,8 @@ public class LogFactory_MaxFun {
                 return new showAllNoOver();
             case "noteTree":
                 return new noteTree();
+            case "showAllOver":
+                return new showAllOver();
             default:
                 return null;
         }
@@ -66,7 +65,7 @@ public class LogFactory_MaxFun {
 //        JPanel jPanel = new JPanel();
 //        GridBagLayout gridBagLayout = new GridBagLayout();
 //        jPanel.setLayout(gridBagLayout);
-//        LogOverPanel logOverPanel = LogFactory.getLogNoOverPanel(false);
+//        LogTwoStatusPanel logOverPanel = LogFactory.getLogNoOverPanel(false);
 //        //TODO 添加点击事件
 //        JComboBox markJComboBox = LogFactory.getMarkJComboBox();
 //        JComboBox classifyJComboBox = LogFactory.getClassifyJComboBox();

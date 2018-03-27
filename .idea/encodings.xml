@@ -21,12 +21,12 @@
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogJFrame.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogMaxMainJFrame.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogMenu.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogOverPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogTextArea.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/LogTwoStatusPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/LogApp/View/QT/LogDetailSingleQT.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/example/e_20180315/FtpClientUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/example/e_20180315/HideFrame.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/example/e_20180315/RpcServiceCommand.java" charset="UTF-8" />
-    <file url="file://D:/xxy/Log_Diary/Diary/2018/03/19/0c5aea69b529497a9a953e38522636cb.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/../Log_Diary/Diary/2018/03/19/0c5aea69b529497a9a953e38522636cb.txt" charset="GBK" />
   </component>
 </project>

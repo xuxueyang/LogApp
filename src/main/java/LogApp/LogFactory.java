@@ -10,7 +10,7 @@ import LogApp.Tool.LogNotification;
 import LogApp.Extends.VFlowLayout;
 import LogApp.View.LogEachPanel;
 import LogApp.View.LogMenu;
-import LogApp.View.LogOverPanel;
+import LogApp.View.LogTwoStatusPanel;
 import LogApp.View.LogShowDetailPanel;
 import LogApp.View.QT.LabelCellRender;
 
@@ -29,23 +29,23 @@ public class LogFactory {
         }
         return logMenu;
     }
-    public static  LogOverPanel  getLogOverPanel(boolean needShowButton){
-        LogOverPanel logOverPanel;
+    public static LogTwoStatusPanel getLogOverPanel(boolean needShowButton){
+        LogTwoStatusPanel logTwoStatusPanel;
         if(needShowButton)
-            logOverPanel = new LogOverPanel(getShowOverButton());
+            logTwoStatusPanel = new LogTwoStatusPanel(getShowOverButton());
         else
-            logOverPanel = new LogOverPanel();
-        logOverPanel.setLayout(new VFlowLayout());
-        return logOverPanel;
+            logTwoStatusPanel = new LogTwoStatusPanel();
+        logTwoStatusPanel.setLayout(new VFlowLayout());
+        return logTwoStatusPanel;
     }
-    public static  LogOverPanel  getLogNoOverPanel(boolean needShowButton){
-        LogOverPanel logOverPanel;
+    public static LogTwoStatusPanel getLogNoOverPanel(boolean needShowButton){
+        LogTwoStatusPanel logTwoStatusPanel;
         if(needShowButton)
-            logOverPanel = new LogOverPanel(getShowNoOverButton());
+            logTwoStatusPanel = new LogTwoStatusPanel(getShowNoOverButton());
         else
-            logOverPanel = new LogOverPanel();
-        logOverPanel.setLayout(new VFlowLayout());
-        return logOverPanel;
+            logTwoStatusPanel = new LogTwoStatusPanel();
+        logTwoStatusPanel.setLayout(new VFlowLayout());
+        return logTwoStatusPanel;
     }
     public static JButton getShowOverButton(){
         final JButton jButton = new JButton();

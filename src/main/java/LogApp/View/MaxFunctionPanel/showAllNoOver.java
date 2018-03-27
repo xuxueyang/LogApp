@@ -2,9 +2,8 @@ package LogApp.View.MaxFunctionPanel;
 
 import LogApp.LogFactory;
 import LogApp.LogStatic;
-import LogApp.Tool.Log;
 import LogApp.View.LogEachPanel;
-import LogApp.View.LogOverPanel;
+import LogApp.View.LogTwoStatusPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +14,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class showAllNoOver extends InvokeFun{
-    private LogOverPanel logOverPanel;
+    private LogTwoStatusPanel logTwoStatusPanel;
     private JComboBox  markJComboBox;
     private JComboBox classifyJComboBox;
     private JComboBox priorityJComboBox;
@@ -26,7 +25,7 @@ public class showAllNoOver extends InvokeFun{
 //        name  = map(functionPanel)
         GridBagLayout gridBagLayout = new GridBagLayout();
         this.setLayout(gridBagLayout);
-        logOverPanel = LogFactory.getLogNoOverPanel(false);
+        logTwoStatusPanel = LogFactory.getLogNoOverPanel(false);
         //TODO 添加点击事件
         markJComboBox = LogFactory.getMarkJComboBox();
         markJComboBox.addActionListener(new ActionListener() {
@@ -36,7 +35,7 @@ public class showAllNoOver extends InvokeFun{
                 Object[] objects = jComboBox.getSelectedObjects();
                 Color color = (Color)objects[0];
                 markJComboBox.setBackground(color);
-                logOverPanel.showByMark(LogStatic.mark_star.values()[jComboBox.getSelectedIndex()]);
+                logTwoStatusPanel.showByMark(LogStatic.mark_star.values()[jComboBox.getSelectedIndex()]);
                 //TODO 不能立刻刷新背景，有bug
                 markJComboBox.validate();
                 markJComboBox.repaint();
@@ -48,7 +47,7 @@ public class showAllNoOver extends InvokeFun{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JComboBox jComboBox = (JComboBox)e.getSource();
-                logOverPanel.showByClassify(LogStatic.classify.values()[jComboBox.getSelectedIndex()]);
+                logTwoStatusPanel.showByClassify(LogStatic.classify.values()[jComboBox.getSelectedIndex()]);
                 classifyJComboBox.validate();
                 classifyJComboBox.repaint();
                 repaint();
@@ -59,7 +58,7 @@ public class showAllNoOver extends InvokeFun{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JComboBox jComboBox = (JComboBox)e.getSource();
-                logOverPanel.showByPriority(LogStatic.priority.values()[jComboBox.getSelectedIndex()]);
+                logTwoStatusPanel.showByPriority(LogStatic.priority.values()[jComboBox.getSelectedIndex()]);
                 priorityJComboBox.validate();
                 priorityJComboBox.repaint();
                 repaint();
@@ -68,7 +67,7 @@ public class showAllNoOver extends InvokeFun{
         this.add(classifyJComboBox);
         this.add(priorityJComboBox);
         this.add(markJComboBox);
-        this.add(logOverPanel);
+        this.add(logTwoStatusPanel);
         // 添加布局
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.NONE;
@@ -91,7 +90,7 @@ public class showAllNoOver extends InvokeFun{
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.weighty = 2;
-        gridBagLayout.setConstraints(logOverPanel,gridBagConstraints);
+        gridBagLayout.setConstraints(logTwoStatusPanel,gridBagConstraints);
     }
     @Override
     public void Invoke(String methodName, Object[] params) throws IllegalAccessException,InvocationTargetException {
@@ -137,43 +136,43 @@ public class showAllNoOver extends InvokeFun{
      * @param arrayList
      */
     public void showAllNoOver(ArrayList<LogEachPanel> arrayList){
-        if(logOverPanel==null)
+        if(logTwoStatusPanel ==null)
             return;
         for(LogEachPanel panel:arrayList){
-            logOverPanel.addLogEachPanel(panel);
+            logTwoStatusPanel.addLogEachPanel(panel);
         }
 //        jScrollPane.setPreferredSize (new Dimension (LogStatic.defaultWidth,50*arrayList.size()));
 //        int k = Math.round((float)detailPanelWightX/(detailPanelWightX+mainPanelWightX+0.1f));
 //        jScrollPane.setPreferredSize (new Dimension(LogStatic.maxDefaultWidth*k,LogStatic.maxDefaultHeight));
 //
-//        jScrollPane.setViewportView(logOverPanel);
+//        jScrollPane.setViewportView(logTwoStatusPanel);
 //        this.setVisible(true);
     }
     public void changeMessage(String uuid,String message){
-        if(logOverPanel==null)
+        if(logTwoStatusPanel ==null)
             return;
-        logOverPanel.changeMessage(uuid,message);
+        logTwoStatusPanel.changeMessage(uuid,message);
     }
     public void removeLogEacgPanel(String uuid){
-        if(logOverPanel==null)
+        if(logTwoStatusPanel ==null)
             return;
-        logOverPanel.removeLogEacgPanel(uuid);
+        logTwoStatusPanel.removeLogEacgPanel(uuid);
     }
     public void addLogEachPanel(LogEachPanel logEachPanel){
-        if(logOverPanel==null)
+        if(logTwoStatusPanel ==null)
             return;
-        logOverPanel.addLogEachPanel(logEachPanel);
+        logTwoStatusPanel.addLogEachPanel(logEachPanel);
     }
     public void changeOverState(LogEachPanel logEachPanel){
 //        if(logEachPanel.isOver()){
-//            logOverPanel.addLogEachPanel(logEachPanel);
+//            logTwoStatusPanel.addLogEachPanel(logEachPanel);
 //        }else{
-//            logOverPanel.removeLogEacgPanel(logEachPanel.uuid);
+//            logTwoStatusPanel.removeLogEacgPanel(logEachPanel.uuid);
 //        }
         // 上面这种方法不能通用与多个面板
-        if(logOverPanel.contains(logEachPanel.uuid))
-            logOverPanel.removeLogEacgPanel(logEachPanel.uuid);
+        if(logTwoStatusPanel.contains(logEachPanel.uuid))
+            logTwoStatusPanel.removeLogEacgPanel(logEachPanel.uuid);
         else if(!logEachPanel.isOver())
-            logOverPanel.addLogEachPanel(logEachPanel);
+            logTwoStatusPanel.addLogEachPanel(logEachPanel);
     }
 }
