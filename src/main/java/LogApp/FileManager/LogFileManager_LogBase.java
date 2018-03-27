@@ -7,10 +7,7 @@ import LogApp.Model.LogEach;
 import LogApp.Model.Tree.NoteTreeBase;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class LogFileManager_LogBase implements LogFileManagerInterface{
     //    private LogDay logDay;
@@ -126,6 +123,13 @@ public class LogFileManager_LogBase implements LogFileManagerInterface{
                 }
             }
         }
+        //list的logEach按照时间排序
+        logEachList.sort(new Comparator<LogEach>() {
+            @Override
+            public int compare(LogEach o1, LogEach o2) {
+                return o1.getUpdateData()>o2.getUpdateData() ? 1:-1;
+            }
+        });
         return  logEachList;
     }
     public List<LogEach> getAllOverList(){
@@ -160,6 +164,13 @@ public class LogFileManager_LogBase implements LogFileManagerInterface{
                 }
             }
         }
+        //list的logEach按照时间排序
+        logEachList.sort(new Comparator<LogEach>() {
+            @Override
+            public int compare(LogEach o1, LogEach o2) {
+                return o1.getUpdateData()>o2.getUpdateData() ? 1:-1;
+            }
+        });
         return  logEachList;
     }
 }
