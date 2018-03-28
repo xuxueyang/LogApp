@@ -185,8 +185,8 @@ public class LogStatic {
     public static  int button_height = 100;
     //ShowDetail√Ê∞Â¥Û–°
     public static int detailFrameBubbleWidth = 50;
-    public static int detailFrameWidth = 200;
-    public static int detailFrameHeight = 400;
+    public static int detailFrameWidth = 300;
+    public static int detailFrameHeight = 500;
     //Timer
     public static long delay = 1000;
     public static long period = 4000;
