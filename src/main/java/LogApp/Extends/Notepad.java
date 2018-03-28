@@ -29,7 +29,7 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
 
     private String tempString;//临时字符串,用于存储需要复制粘贴的字符串
 
-    private boolean textValueChanged = false;
+//    private boolean textValueChanged = false;
 
     private int id_font ;//字体
 
@@ -180,7 +180,10 @@ public class Notepad /*implements ActionListener , MouseListener , MouseMotionLi
             @Override
             public void keyTyped(KeyEvent e) {
                 super.keyTyped(e);
-                textValueChanged = true ; //键盘按键按下即导致文本修改
+//                textValueChanged = true ; //键盘按键按下即导致文本修改
+                if(e.getKeyChar() == KeyEvent.VK_ENTER){
+                    setText(getText()+LogStatic.LineDivision);
+                }
                //TODO 广播day被修改。
                 LogNotification.broadcast(new LogEvent(ta.getText(),
                         prefix.name()+LogStatic.resource_suffix._changeMessage.name(),

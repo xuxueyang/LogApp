@@ -193,6 +193,7 @@ public class LogStatic {
     //×Ö·ûÃû×Ö
     public static String FontName="¿¬Ìå";
     public static int FontSize=14;
+    public static String LineDivision = "+";
 //    //ENCODE
 //    public static String encode = Charset.defaultCharset().displayName();
 //    public static byte[] lineSep;

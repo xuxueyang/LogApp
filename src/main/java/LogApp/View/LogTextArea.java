@@ -64,7 +64,7 @@ public class LogTextArea extends JTextArea {
             @Override
             public void keyTyped(KeyEvent e) {
                 super.keyTyped(e);
-                if(e.isControlDown()==true&&(e.getKeyCode()==KeyEvent.VK_Z)){
+                if(e.isControlDown()&&(e.getKeyCode()==KeyEvent.VK_Z)){
                     //不会为空了，因为至少有一个默认的str
                     if(stack.empty())
                         return;
@@ -78,6 +78,9 @@ public class LogTextArea extends JTextArea {
                     LogNotification.broadcast(new LogEvent(tmp,LogStatic.resource.each_changeMessage.name(),uuid));
                     repaint();
                     return;
+                }
+                if(e.getKeyChar() == KeyEvent.VK_ENTER){
+                    setText(getText()+LogStatic.LineDivision);
                 }
                 //这时候ctrl+v的已经粘贴到这里了。
                 stack.push(getText());

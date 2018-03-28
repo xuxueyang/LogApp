@@ -16,6 +16,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -93,6 +94,9 @@ public class LogDetailSingleQT extends JFrame {
             @Override
             public void keyTyped(KeyEvent e) {
                 super.keyTyped(e);
+                if(e.getKeyChar() == KeyEvent.VK_ENTER){
+                    qTextEdit.setText(qTextEdit.getText()+LogStatic.LineDivision);
+                }
                 LogNotification.broadcast(new LogEvent(qTextEdit.getText(), LogStatic.resource.detail_changeMessage.name(),parentUUID));
             }
         });
