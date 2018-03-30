@@ -29,7 +29,7 @@ public class LogFileController implements LogCtrInterface{
         Long size = checkFileSize(choosePath);
         if(size==0)
             return new LogEvent("上传文件大小为0", LogStatic.resource.Return.name(),logEvent.getUuid());
-        if(size>100*1024*1024){
+        if(size>500*1024*1024){
             return new LogEvent("上传文件大小超过100M", LogStatic.resource.Return.name(),logEvent.getUuid());
         }
         ChannelSftp channelSftp = LinuxSFTP.getConnect();
