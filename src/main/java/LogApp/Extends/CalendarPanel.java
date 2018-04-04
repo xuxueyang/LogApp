@@ -257,7 +257,12 @@ public class CalendarPanel extends JPanel {
 
 
                     //为了能够让那个载体组件自用空，这里也需要设置returnDateStr并调用回调接口
-                    returnDateStr = dateStr+bnt.getText();
+                    if(bnt.getText().length()==1){
+                        returnDateStr = dateStr+"0"+bnt.getText();
+                    }else{
+                        returnDateStr = dateStr+bnt.getText();
+                    }
+
 //                    if(callBack!=null){
 ////                        callBack.callback();
 //                    }
