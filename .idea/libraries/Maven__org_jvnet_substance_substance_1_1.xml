@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Maven: org.jvnet.substance:substance:1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/jvnet/substance/substance/1.1/substance-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/org/jvnet/substance/substance/1.1/substance-1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/jvnet/substance/substance/1.1/substance-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
+        <!--mvn install:install-file -Dfile=D:\xxy\LogApp_Git\extends\substance.jar -DgroupId=org.jvnet.substance  -DartifactId=substance -Dversion=1.1 -Dpackaging=jar-->
+        <!--//果然是包没打包全的问题，后面将jar安装到仓库里，而不是引用工程的jar-->

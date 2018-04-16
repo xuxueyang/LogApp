@@ -37,13 +37,13 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>${artifactId}_${maven.build.timestamp}</id>
+                        <id>${project.artifactId}_${maven.build.timestamp}</id>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <finalName>${artifactId}_</finalName>
+                            <finalName>${project.artifactId}_</finalName>
                         </configuration>
                     </execution>
                 </executions>
@@ -70,8 +70,8 @@
                         </goals>
                         <configuration>
                             <headerType>gui</headerType>
-                            <jar>${project.build.directory}/${artifactId}_.jar</jar>
-                            <outfile>${project.build.directory}/${artifactId}_.exe</outfile>
+                            <jar>${project.build.directory}/${project.artifactId}_.jar</jar>
+                            <outfile>${project.build.directory}/${project.artifactId}_.exe</outfile>
                             <downloadUrl>http://java.com/download</downloadUrl>
                             <classPath>
                                 <mainClass>LogApp.LogStart</mainClass>
@@ -91,8 +91,8 @@
                                 <txtProductVersion>1.0.0.0</txtProductVersion>
                                 <productName>${project.name}</productName>
                                 <companyName>www.renmaitong.com</companyName>
-                                <internalName>${artifactId}-${version}</internalName>
-                                <originalFilename>${artifactId}-${version}.exe</originalFilename>
+                                <internalName>${project.artifactId}-${project.version}</internalName>
+                                <originalFilename>${project.artifactId}-${project.version}.exe</originalFilename>
                             </versionInfo>
                         </configuration>
                     </execution>
@@ -122,9 +122,9 @@
         <dependency>
             <groupId>org.jvnet.substance</groupId>
             <artifactId>substance</artifactId>
-            <version>4.3</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/extends/substance.jar</systemPath>
+            <version>1.1</version>
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/extends/substance.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>org.mongodb
