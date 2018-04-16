@@ -1,8 +1,6 @@
 package LogApp;
 
-import LogApp.Controller.LogCtrInterface;
 import LogApp.Tool.*;
-import LogApp.View.LogEachPanel;
 import LogApp.View.LogJFrame;
 import org.jvnet.substance.SubstanceLookAndFeel;
 import org.jvnet.substance.border.StandardBorderPainter;
@@ -10,9 +8,7 @@ import org.jvnet.substance.button.ClassicButtonShaper;
 import org.jvnet.substance.painter.StandardGradientPainter;
 import org.jvnet.substance.skin.SubstanceCremeCoffeeLookAndFeel;
 import org.jvnet.substance.theme.SubstanceCharcoalTheme;
-import org.jvnet.substance.theme.SubstanceEbonyTheme;
 import org.jvnet.substance.title.FlatTitlePainter;
-import org.jvnet.substance.watermark.SubstanceBinaryWatermark;
 
 import javax.swing.*;
 import java.io.IOException;
