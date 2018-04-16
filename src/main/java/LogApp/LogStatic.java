@@ -125,8 +125,17 @@ public class LogStatic {
         global_exit,
         Return,
     }
+    //默认路径
+    public static String CONFIG_PATH="config/application.yml";
+    //可配置参数
+    public static String[] CONFIG_STRS = {"Operator_Delay","NLogEventCacheSize","maxDefaultWidth","maxDefaultHeight",
+            "defaultWidth","defaultHeight","detailFrameWidth","detailFrameHeight",
+            "Timer_delay","Timer_period","FontSize","Operator_Delay"
+    };
+
+    //不用基本类型是因为jvm编译的时候为了效率会替换final static 的静态变量
     //Log记录延时
-    public static long Operator_Delay = 2000;
+    public static Integer Operator_Delay = 2000;
     //全局，日期
     public static String GLOBAL_DATE ;//= LogGenerator.getNowDate();
     {
@@ -145,54 +154,54 @@ public class LogStatic {
 
     }
     //是否用数据库，还是从文件读取
-    public static boolean isUseLocalDataBase = false;
+    public static Boolean isUseLocalDataBase = false;
     //LogEvent缓存大小
-    public static int NLogEventCacheSize = 10;
+    public static Integer NLogEventCacheSize = 10;
     //LogDate
     public static String Date_Pattern = "yyyy-MM-dd";
     public static String Date_Detail_Pattern = "";
     public static String Date_Path_Pattern = "yyyy/MM/dd";
     //JMaxMainJFrame
-    public static int maxDefaultWidth = 950;
-    public static int maxDefaultHeight = 850;
+    public static Integer maxDefaultWidth = 950;
+    public static Integer maxDefaultHeight = 850;
 
     //JFrame
 //    public static int maxTask = 6; //最多显示6条记录
-    public static int defaultWidth = 680;
-    public static int defaultHeight = 830;
+    public static Integer defaultWidth = 680;
+    public static Integer defaultHeight = 830;
     public static String ChangeStateString = ".*";
 //    居中显示
 //    public static int x =  (int)Math.round((Toolkit.getDefaultToolkit().getScreenSize().getWidth()-defaultWidth)/2);
 //    public static int y =  (int)Math.round((Toolkit.getDefaultToolkit().getScreenSize().getHeight()-defaultHeight)/2);
 //    右上显示
-    public static int x =  (int)Math.round((Toolkit.getDefaultToolkit().getScreenSize().getWidth()-defaultWidth-200));
-    public static int y =  100;
+    public static Integer x =  (int)Math.round((Toolkit.getDefaultToolkit().getScreenSize().getWidth()-defaultWidth-200));
+    public static Integer y =  100;
 
     //LogMenu
-    public static  int menuWidth = defaultWidth;
-    public static  int menuHeight = 200;
+    public static  Integer menuWidth = defaultWidth;
+    public static  Integer menuHeight = 200;
     //JEachPanel
-    public static int eachPanelCheckBoxWidth = 80;
-    public static int eachPanelCheckBoxHeight = 80;
-    public static int eachPanel_detailButtonWidth = 100;
-    public static int eachPanel_detailButtonHeight = 80;
-    public static int eachPanel_delButtonWidth = 100;
-    public static int eachPanel_delButtonHeight = 80;
+    public static Integer eachPanelCheckBoxWidth = 80;
+    public static Integer eachPanelCheckBoxHeight = 80;
+    public static Integer eachPanel_detailButtonWidth = 100;
+    public static Integer eachPanel_detailButtonHeight = 80;
+    public static Integer eachPanel_delButtonWidth = 100;
+    public static Integer eachPanel_delButtonHeight = 80;
     //LogTextArea
-    public static int LogTextArea_maxRow = 1;
+    public static Integer LogTextArea_maxRow = 1;
 //    public static int LogTextArea_cacheNum = 10;
     //JButton
-    public static  int button_height = 100;
+    public static  Integer button_height = 100;
     //ShowDetail面板大小
-    public static int detailFrameBubbleWidth = 50;
-    public static int detailFrameWidth = 300;
-    public static int detailFrameHeight = 500;
+    public static Integer detailFrameBubbleWidth = 50;
+    public static Integer detailFrameWidth = 300;
+    public static Integer detailFrameHeight = 500;
     //Timer
-    public static long delay = 1000;
-    public static long period = 4000;
+    public static Integer Timer_delay = 1000;
+    public static Integer Timer_period = 4000;
     //字符名字
     public static String FontName="楷体";
-    public static int FontSize=14;
+    public static Integer FontSize=14;
     public static String LineDivision = "+";
 //    //ENCODE
 //    public static String encode = Charset.defaultCharset().displayName();

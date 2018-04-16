@@ -1,0 +1,15 @@
+#×Ö·û´®
+REAL_PATH : D:/xxy/Log_Diary
+LineDivision : +
+#Long
+Operator_Delay : 2000
+NLogEventCacheSize : 10
+maxDefaultWidth : 950
+maxDefaultHeight : 850
+defaultWidth : 680
+defaultHeight : 830
+detailFrameWidth : 300
+detailFrameHeight: 500
+Timer_delay : 1000
+Timer_period : 4000
+FontSize : 14

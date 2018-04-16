@@ -28,5 +28,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/example/e_20180315/HideFrame.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/example/e_20180315/RpcServiceCommand.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../Log_Diary/Diary/2018/03/19/0c5aea69b529497a9a953e38522636cb.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/../workflow/src/main/java/com/fengyun/cube/workflow/service/MongoClientTest.java" charset="UTF-8" />
   </component>
 </project>

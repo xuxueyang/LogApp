@@ -1,4 +1,4 @@
-package example;
+package Test;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;

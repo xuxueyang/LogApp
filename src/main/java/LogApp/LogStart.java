@@ -15,6 +15,9 @@ import org.jvnet.substance.title.FlatTitlePainter;
 import org.jvnet.substance.watermark.SubstanceBinaryWatermark;
 
 import javax.swing.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * Created by 徐雪阳 on 2017/12/5.
@@ -27,6 +30,7 @@ public class LogStart {
     }
 
     public LogStart(){
+        setLookStyle();
         this.initByXml();
 //        LogJFrame.getLogJFrame().setVisible(true);
 
@@ -51,7 +55,30 @@ public class LogStart {
      * 根据xml读取配置设置默认属性。
      */
     private void initByXml(){
-        setLookStyle();
+        InputStream is = this.getClass().getClassLoader().getResourceAsStream(LogStatic.CONFIG_PATH);
+        if(is==null)
+            return;
+        Properties properties = new Properties();
+        try {
+            properties.load(is);
+            //设置默认配置
+            LogStatic.REAL_PATH = properties.getProperty("REAL_PATH",LogStatic.REAL_PATH );
+            LogStatic.LineDivision = properties.getProperty("LineDivision",LogStatic.LineDivision );
+            //转换数字
+            //读取的配置文件名
+            for(String str:LogStatic.CONFIG_STRS){
+                try{
+                    Integer tmp = Integer.parseInt(properties.getProperty(str));
+                    LogStatic.class.getField(str).set(null,tmp);
+                }catch (Exception e){
+                    Log.Loggin("转化"+str+"错误",LogStatic.Tag.SystemLog.name());
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
     private void setLookStyle(){
 //         设置窗口的风格

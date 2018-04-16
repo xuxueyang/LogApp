@@ -22,7 +22,7 @@ public class LogTimer {
         this.timer = new Timer(true);
         LogTimerTask task = new LogTimerTask();
         //启动1秒后，每个20秒自动保存数据
-        timer.schedule(task, LogStatic.delay, LogStatic.period);
+        timer.schedule(task, LogStatic.Timer_delay, LogStatic.Timer_period);
     }
     private  class  LogTimerTask extends TimerTask{
         @Override
