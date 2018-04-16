@@ -120,6 +120,13 @@
             <!--<version>4.3</version>-->
         <!--</dependency>-->
         <dependency>
+            <groupId>org.jvnet.substance</groupId>
+            <artifactId>substance</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/extends/substance.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.mongodb
             </groupId>
             <artifactId>mongo-java-driver
