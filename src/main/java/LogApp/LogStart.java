@@ -72,6 +72,8 @@ public class LogStart {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            Log.Loggin(e.getMessage(),LogStatic.Tag.SystemLog.name());
+
         }
 
 
@@ -103,6 +105,7 @@ public class LogStart {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            Log.Loggin(e.getMessage(),LogStatic.Tag.SystemLog.name());
         }
     }
 }
