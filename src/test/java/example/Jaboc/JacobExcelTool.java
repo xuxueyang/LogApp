@@ -219,7 +219,7 @@ public class JacobExcelTool {
     {        
 //        
 //        String path = "f:\\s.xlsx";
-//        example.Jaboc.JacobExcelTool test = new example.Jaboc.JacobExcelTool();
+//        JacobExcelTool test = new JacobExcelTool();
 //        test.OpenExcel(path, false, false);
 ////        test.addSheet();
 //        System.out.println(test.getWorkbookName());

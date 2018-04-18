@@ -1,7 +1,5 @@
 package example.Jaboc;
 
-import javax.swing.text.AbstractDocument.Content;
-
 import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.ComException;
 import com.jacob.com.Dispatch;

@@ -11,7 +11,7 @@ import java.util.*;
 
 public class LinuxSFTP {
     //采用默认的参数目前
-    private  static  String ipAddr = "39.108.233.104";
+    private  static  String ipAddr = "47.106.140.252";
     private  static  String username = "root";
     private  static  String password = "Xuxueyang1";
     private  static  String uploadServerPath = "/root/LogAppFile";
