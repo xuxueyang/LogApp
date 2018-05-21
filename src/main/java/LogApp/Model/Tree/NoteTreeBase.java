@@ -3,7 +3,6 @@ package LogApp.Model.Tree;
 import LogApp.FileManager.LogFileLoadAndSave;
 import LogApp.LogStatic;
 import LogApp.Tool.LogGenerator;
-import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,8 +14,8 @@ enum TreeLevel{
 }
 public class NoteTreeBase {
     protected boolean isDiary = false;
-    public boolean isExist = true;//²ÉÓÃÂß¼­É¾³ý
-    public boolean isEncode = false;//Ä¬ÈÏÃ»ÓÐ¼ÓÃÜ
+    public boolean isExist = true;//ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½É¾ï¿½ï¿½
+    public boolean isEncode = false;//Ä¬ï¿½ï¿½Ã»ï¿½Ð¼ï¿½ï¿½ï¿½
     protected String UUID;
     protected TreeLevel treeLevel;
     protected NoteTreeBase parrent;
@@ -37,7 +36,7 @@ public class NoteTreeBase {
     }
 
     private void update(){
-        //¶Ô¸¸Àà½øÐÐ¸üÐÂ
+        //ï¿½Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½
         NoteTreeBase Pparrent = getTop();
         if(!Pparrent.isDiary){
             Pparrent.update();
@@ -117,12 +116,12 @@ public class NoteTreeBase {
     }
 
     /**
-     * ÒòÎªº¬ÓÐ²ã¼¶¹ØÏµ£¬ËùÒÔÐòÁÐ»¯Ê±Ö»ÐòÁÐ»¯TopµÄ½Úµã¡£
+     * ï¿½ï¿½Îªï¿½ï¿½ï¿½Ð²ã¼¶ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½Ê±Ö»ï¿½ï¿½ï¿½Ð»ï¿½Topï¿½Ä½Úµã¡£
      * @return
      */
     public String getFolderPath(){
-        //¸ù¾Ý´´½¨ÈÕÆÚºÍÂ·¾¶£¬»ñÈ¡µ½¸ÃÊý¾ÝÎÄ¼þÓ¦¸ÃµÄÂ·¾¶
-        String path = LogStatic.REAL_PATH_NOTETREE;//»ØÍ·ºÍ¡°Log¡±Çø±ð
+        //ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ó¦ï¿½Ãµï¿½Â·ï¿½ï¿½
+        String path = LogStatic.REAL_PATH_NOTETREE;//ï¿½ï¿½Í·ï¿½Í¡ï¿½Logï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         return path;
     }
     public String getFilePath(){
